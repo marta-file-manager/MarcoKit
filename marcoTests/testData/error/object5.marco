@@ -1,0 +1,7 @@
+--before
+{a {b {c "d"}}
+
+--after
+14: '}' expected
+
+{a {b {c "d"}}💥

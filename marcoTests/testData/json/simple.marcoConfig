@@ -1,0 +1,21 @@
+--before
+hello "world"
+array [1 2 3 true false null "a" {} [] [1]]
+
+--after
+{"hello": "world", "array": [1, 2, 3, true, false, null, "a", {}, [], [1]]}
+
+hello "world"
+
+array [
+    1
+    2
+    3
+    true
+    false
+    null
+    "a"
+    {}
+    []
+    [ 1 ]
+]

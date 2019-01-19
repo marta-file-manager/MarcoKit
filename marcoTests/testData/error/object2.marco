@@ -1,0 +1,7 @@
+--before
+{a
+
+--after
+2: Unexpected end of file
+
+{a💥

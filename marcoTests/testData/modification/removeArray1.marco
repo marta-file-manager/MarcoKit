@@ -1,0 +1,9 @@
+--before
+[
+    "John"
+]
+
+--remove 0
+
+--after
+[]

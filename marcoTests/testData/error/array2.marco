@@ -1,0 +1,7 @@
+--before
+[t
+
+--after
+2: 'true' expected
+
+[t💥

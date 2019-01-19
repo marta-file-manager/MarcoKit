@@ -1,0 +1,15 @@
+--before
+[
+    "John"
+    "Smith"
+]
+
+--add
+[[[]]]
+
+--after
+[
+    "John"
+    "Smith"
+    [[[]]]
+]

@@ -1,0 +1,7 @@
+--before
+#ffffgg
+
+--after
+5: Color literal expected, got 'g'
+
+#ffff💥

@@ -1,0 +1,13 @@
+--before
+[
+    !"foo"
+]
+
+--add
+"bar"
+
+--after
+[
+    "bar"
+    !"foo"
+]

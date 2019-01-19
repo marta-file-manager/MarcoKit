@@ -1,0 +1,7 @@
+--before
+[ 1  2    3  ]
+
+--remove 0
+
+--after
+[ 2    3  ]

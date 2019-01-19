@@ -1,0 +1,7 @@
+--before
+{5 5}
+
+--after
+1: Unexpected identifier character ' '
+
+{💥

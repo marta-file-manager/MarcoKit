@@ -1,0 +1,13 @@
+--before
+[
+    true
+    false
+    1
+    "a"
+        "b"
+    3
+        "c"
+]
+
+--after
+[true false 1 "a" "b" 3 "c"]

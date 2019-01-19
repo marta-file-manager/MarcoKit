@@ -1,0 +1,7 @@
+--before
+[[[[[[[[]]]]]]]]]
+
+--after
+16: End of file expected, got ']'
+
+[[[[[[[[]]]]]]]]💥

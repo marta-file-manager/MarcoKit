@@ -1,0 +1,7 @@
+--before
+[[[[[[[[]]]]]]]
+
+--after
+15: Unexpected end of file
+
+[[[[[[[[]]]]]]]💥

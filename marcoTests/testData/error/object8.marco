@@ -1,0 +1,7 @@
+--before
+{a trueb false}
+
+--after
+7: Whitespace required between object entries
+
+{a true💥

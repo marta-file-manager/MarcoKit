@@ -1,0 +1,16 @@
+--before
+{}
+
+--add b
+{
+    f "foo"
+    b "bar"
+}
+
+--after
+{
+    b {
+        f "foo"
+        b "bar"
+    }
+}

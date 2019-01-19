@@ -1,0 +1,12 @@
+--before
+{
+    "a" 1
+    "b" 2
+}
+
+--remove a
+
+--after
+{
+    "b" 2
+}

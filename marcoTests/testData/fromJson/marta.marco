@@ -1,0 +1,726 @@
+--before
+{
+  "environment": {
+    "terminal": "Terminal",
+    "textEditor": "Sublime Text"
+  },
+
+  "behavior": {
+    "theme": "Kon",
+    "useSystemAccentColor": true,
+    "controlStyle": "fromTheme",
+    "sheetDialogs": true,
+    "forceOverlayScrollBars": true,
+    "dateFormat": "%-d %b %Y",
+    "timeFormat": " at %-H:%M",
+    "relativeDate": true,
+    "doublePaneConfigurationInSublime": false,
+    "setCurrentPathAsWindowTitle": false,
+    "actionBar": {
+      "show": true
+    },
+
+    "menu": {
+      "preselectFirstItem": false
+    },
+
+    "tabs": {
+      "alwaysShowTabBar": false
+    },
+
+    "quickSelect": {
+      "matchOnlyPrefix": false,
+      "defaultMode": "word",
+      "activateOnAnyCharacter": true,
+      "filterMatchedItems": false
+    },
+
+    "actions": {
+      "core.trash.confirm": true,
+      "core.delete.confirm": true,
+      "core.favorites.showPinnedPlaces": true,
+      "core.copy.askTargetPath": true,
+      "core.lookup.mode": "prefix",
+      "core.activate.next.tab.circular": true,
+      "core.open.openExecutablesAsDirectories": false
+    },
+
+    "table": {
+      "showGoUpDirectory": true,
+      "selectGoUpDirectoryOnEnter": false,
+      "showIcons": true,
+      "useAlternateColor": true,
+      "iconSize": 16,
+      "verticalPadding": 2,
+      "circularSelection": false,
+      "rightClickSelect": false,
+      "directoryPrefix": "",
+      "directorySuffix": "",
+      "maxItemCount": 10000
+    },
+
+    "files": {
+      "fileWatcher": true,
+      "dragDrop": true,
+
+      "globalFilter": {
+        "alwaysShowDirectories": true,
+        "name": ["^(?!\\.DS_Store$).*$"]
+      }
+    },
+
+    "volumeSpace": {
+      "show": "always",
+      "format": "${availableSpace} (${availablePercent}) available"
+    }
+  },
+
+  "fonts": {
+    "files": ["Default", 12],
+    "breadcrumbs": ["Default Light", 12],
+    "tableHeader": ["Default", 11],
+    "statusBar": ["Default Light", 11],
+    "actionBar": ["Default", 12],
+    "tabs": ["Default", 12],
+    "ephemeralTabs": ["Default Bold", 12]
+  },
+
+  "gadgets": [],
+
+  "keyBindings": {
+    "core.preferences": ["Cmd+,"],
+    "core.change.current.pane": ["Tab"],
+    "core.move.up": ["Up"],
+    "core.select.move.up": ["Shift+Up"],
+    "core.move.down": ["Down"],
+    "core.select.move.down": ["Shift+Down"],
+    "core.move.left": ["Left"],
+    "core.select.move.left": ["Shift+Left"],
+    "core.move.right": ["Right"],
+    "core.select.move.right": ["Shift+Right"],
+    "core.move.home": ["Home"],
+    "core.move.end": ["End"],
+    "core.move.page.up": ["PageUp"],
+    "core.move.page.down": ["PageDown"],
+    "core.move.half.page.up": ["Alt+PageUp"],
+    "core.move.half.page.down": ["Alt+PageDown"],
+    "core.select.all.before": ["Shift+Alt+Up"],
+    "core.select.all.after": ["Shift+Alt+Down"],
+    "core.documentation": ["F1"],
+    "core.open": ["Return"],
+    "core.open.with": ["Cmd+Return"],
+    "core.go.up": ["Backspace"],
+    "core.trash": ["F8", "Cmd+Backspace"],
+    "core.select.all": ["Cmd+A"],
+    "core.deselect.all": ["Escape"],
+    "core.toggle.show.hidden.files": ["Control+H"],
+    "core.preview": ["Cmd+Y", "Space"],
+    "core.open.terminal.here": ["F11"],
+    "core.edit": ["F4"],
+    "core.open.editor.here": ["Shift+F4"],
+    "core.copy.to.clipboard": ["Cmd+C"],
+    "core.paste": ["Cmd+V"],
+    "core.duplicate": ["Cmd+D"],
+    "core.copy": ["F5"],
+    "core.move": ["F6"],
+    "core.rename": ["Shift+F6"],
+    "core.new.file": ["Shift+F7"],
+    "core.new.directory": ["F7"],
+    "core.refresh": ["F2"],
+    "core.get.info": ["Cmd+I"],
+    "core.copy.current.dir.path": ["F12"],
+    "core.copy.paths": ["Cmd+F12"],
+    "core.delete": ["Shift+F8"],
+    "core.actions": ["Shift+Cmd+P"],
+    "core.recent.directories": ["Alt+3"],
+    "core.back": ["Alt+Left"],
+    "core.forward": ["Alt+Right"],
+    "core.favorites": ["Alt+2"],
+    "core.add.to.favorites.here": ["Shift+Alt+2"],
+    "core.volumes": ["Alt+1"],
+    "core.hierarchy": ["Alt+0"],
+    "core.goto.path": ["Cmd+G"],
+    "core.clone.to.right": ["Cmd+Right"],
+    "core.clone.to.left": ["Cmd+Left"],
+    "core.clone.current.directory.to.right": ["Shift+Cmd+Right"],
+    "core.clone.current.directory.to.left": ["Shift+Cmd+Left"],
+    "core.new.window": ["Cmd+N"],
+    "core.new.tab": ["Cmd+T"],
+    "core.close.tab": ["Cmd+W"],
+    "core.activate.tab.1": ["Cmd+1"],
+    "core.activate.tab.2": ["Cmd+2"],
+    "core.activate.tab.3": ["Cmd+3"],
+    "core.activate.tab.4": ["Cmd+4"],
+    "core.activate.tab.5": ["Cmd+5"],
+    "core.activate.tab.6": ["Cmd+6"],
+    "core.activate.tab.7": ["Cmd+7"],
+    "core.activate.tab.8": ["Cmd+8"],
+    "core.activate.tab.9": ["Cmd+9"],
+    "core.activate.next.tab": ["Cmd+Shift+]"],
+    "core.activate.previous.tab": ["Cmd+Shift+["],
+    "core.lookup": ["Cmd+P"],
+    "core.lookup.here": ["Cmd+Alt+P"],
+    "core.toggle.terminal": ["Cmd+Alt+O"],
+    "core.activate.terminal": ["Cmd+O"],
+    "core.show.operation.queue": ["="]
+  },
+
+  "menu": [
+    {
+      "name": "marta",
+      "children": [
+        "core.about",
+        "core.check.for.updates",
+        "core.preferences"
+      ]
+    },
+    {
+      "name": "File",
+      "children": [
+        "core.new.file",
+        "core.new.directory",
+        "separator",
+
+        "core.open",
+        "core.open.with",
+        "core.edit",
+        "core.preview",
+        "separator",
+
+        "core.rename",
+        "core.copy",
+        "core.move",
+        "separator",
+
+        "core.delete",
+        "core.trash"
+      ]
+    },
+    {
+      "name": "Edit",
+      "children": [
+        "core.copy.to.clipboard",
+        "core.paste",
+        "separator",
+
+        "core.select.all",
+        "core.deselect.all",
+        "core.invert.selection",
+        "separator",
+
+        "core.select.group",
+        "core.deselect.group"
+      ]
+    },
+    {
+      "name": "View",
+      "children": [
+        "core.display.mode",
+        "core.edit.columns",
+        "core.ordering",
+        "separator",
+
+        "core.toggle.show.hidden.files",
+        "core.refresh"
+      ]
+    },
+    {
+      "name": "Go",
+      "children": [
+        "core.back",
+        "core.forward",
+        "separator",
+
+        "core.go.up",
+        "core.hierarchy",
+        "separator",
+
+        "core.favorites",
+        "core.add.to.favorites.here",
+        "separator",
+
+        "core.volumes",
+        "core.recent.directories",
+        "separator",
+
+        "core.goto.path"
+      ]
+    },
+    {
+      "name": "Tools",
+      "children": [
+        "core.actions",
+        "separator",
+
+        "core.activate.terminal",
+        "core.toggle.terminal",
+        "separator",
+
+        "core.copy.paths",
+        "core.copy.current.dir.path",
+        "separator",
+
+        "org.yanex.dirstat.open",
+        "separator",
+
+        "core.reveal.in.finder",
+        "core.open.terminal.here"
+      ]
+    },
+    {
+      "name": "Window",
+      "children": [
+        "core.new.window",
+        "core.new.tab",
+        "separator",
+
+        "core.close.window",
+        "core.close.tab",
+        "separator",
+
+        "core.activate.previous.tab",
+        "core.activate.next.tab",
+        "core.wrap.panes"
+      ]
+    }
+  ],
+
+  "setup": {
+    "pinnedPlaces": [
+      {"path": "user.home"},
+      {"path": "user.downloads"},
+      {"path": "user.documents"},
+      {"path": "user.desktop"},
+      {"path": "user.library", "name": "Library"},
+      {"path": "system.applications"}
+    ],
+
+    "actionBar": [
+      "core.open.with",
+      "core.edit",
+      "core.copy",
+      "core.move",
+      "core.rename",
+      "core.new.directory",
+      "core.delete"
+    ],
+
+    "touchBar": [
+      { "action": "core.favorites" },
+      { "action": "core.recent.directories" },
+      { "action": "core.toggle.show.hidden.files" },
+      { "action": "core.edit", "modifiers": "-Shift" },
+      { "action": "core.open.editor.here", "modifiers": "Shift" },
+      { "action": "core.new.directory", "backgroundColor": "#624a2d", "modifiers": "-Shift" },
+      { "action": "core.new.file", "backgroundColor": "#624a2d", "modifiers": "Shift" },
+      { "action": "core.copy", "backgroundColor": "#495e4d" },
+      { "action": "core.move", "backgroundColor": "#3c4554", "modifiers": "-Shift" },
+      { "action": "core.rename", "backgroundColor": "#3c4554", "modifiers": "Shift" },
+      { "action": "core.trash", "backgroundColor": "#5f0405", "modifiers": "-Shift" },
+      { "action": "core.delete", "backgroundColor": "#5f0405", "modifiers": "Shift" }
+    ]
+  },
+
+  "etty": {
+    "theme": "Pastel",
+    "shell": "",
+    "useMainThemeColors": true,
+    "dimWhenUnfocused": true,
+    "chdirToPane": true,
+    "chdirToTerminal": true,
+    "pasteOnRightClick": true,
+    "copyOnSelection": true,
+    "leadingSpaceOnCd": true,
+
+    "fonts": {
+      "normal": ["Monaco", 12]
+    },
+
+    "environ": {}
+  }
+}
+
+--after
+{
+    gadgets []
+
+    behavior {
+        controlStyle "fromTheme"
+        dateFormat "%-d %b %Y"
+        doublePaneConfigurationInSublime false
+        forceOverlayScrollBars true
+        relativeDate true
+        setCurrentPathAsWindowTitle false
+        sheetDialogs true
+        theme "Kon"
+        timeFormat " at %-H:%M"
+        useSystemAccentColor true
+
+        actionBar {
+            show true
+        }
+
+        actions {
+            core.activate.next.tab.circular true
+            core.copy.askTargetPath true
+            core.delete.confirm true
+            core.favorites.showPinnedPlaces true
+            core.lookup.mode "prefix"
+            core.open.openExecutablesAsDirectories false
+            core.trash.confirm true
+        }
+
+        files {
+            dragDrop true
+            fileWatcher true
+
+            globalFilter {
+                alwaysShowDirectories true
+                name [ "^(?!\\.DS_Store$).*$" ]
+            }
+        }
+
+        menu {
+            preselectFirstItem false
+        }
+
+        quickSelect {
+            activateOnAnyCharacter true
+            defaultMode "word"
+            filterMatchedItems false
+            matchOnlyPrefix false
+        }
+
+        table {
+            circularSelection false
+            directoryPrefix ""
+            directorySuffix ""
+            iconSize 16
+            maxItemCount 10000
+            rightClickSelect false
+            selectGoUpDirectoryOnEnter false
+            showGoUpDirectory true
+            showIcons true
+            useAlternateColor true
+            verticalPadding 2
+        }
+
+        tabs {
+            alwaysShowTabBar false
+        }
+
+        volumeSpace {
+            format "${availableSpace} (${availablePercent}) available"
+            show "always"
+        }
+    }
+
+    environment {
+        terminal "Terminal"
+        textEditor "Sublime Text"
+    }
+
+    etty {
+        chdirToPane true
+        chdirToTerminal true
+        copyOnSelection true
+        dimWhenUnfocused true
+        environ {}
+        leadingSpaceOnCd true
+        pasteOnRightClick true
+        shell ""
+        theme "Pastel"
+        useMainThemeColors true
+
+        fonts {
+            normal [ "Monaco" 12 ]
+        }
+    }
+
+    fonts {
+        actionBar [ "Default" 12 ]
+        breadcrumbs [ "Default Light" 12 ]
+        ephemeralTabs [ "Default Bold" 12 ]
+        files [ "Default" 12 ]
+        statusBar [ "Default Light" 11 ]
+        tableHeader [ "Default" 11 ]
+        tabs [ "Default" 12 ]
+    }
+
+    keyBindings {
+        core.actions [ "Shift+Cmd+P" ]
+        core.activate.next.tab [ "Cmd+Shift+]" ]
+        core.activate.previous.tab [ "Cmd+Shift+[" ]
+        core.activate.tab.1 [ "Cmd+1" ]
+        core.activate.tab.2 [ "Cmd+2" ]
+        core.activate.tab.3 [ "Cmd+3" ]
+        core.activate.tab.4 [ "Cmd+4" ]
+        core.activate.tab.5 [ "Cmd+5" ]
+        core.activate.tab.6 [ "Cmd+6" ]
+        core.activate.tab.7 [ "Cmd+7" ]
+        core.activate.tab.8 [ "Cmd+8" ]
+        core.activate.tab.9 [ "Cmd+9" ]
+        core.activate.terminal [ "Cmd+O" ]
+        core.add.to.favorites.here [ "Shift+Alt+2" ]
+        core.back [ "Alt+Left" ]
+        core.change.current.pane [ "Tab" ]
+        core.clone.current.directory.to.left [ "Shift+Cmd+Left" ]
+        core.clone.current.directory.to.right [ "Shift+Cmd+Right" ]
+        core.clone.to.left [ "Cmd+Left" ]
+        core.clone.to.right [ "Cmd+Right" ]
+        core.close.tab [ "Cmd+W" ]
+        core.copy [ "F5" ]
+        core.copy.current.dir.path [ "F12" ]
+        core.copy.paths [ "Cmd+F12" ]
+        core.copy.to.clipboard [ "Cmd+C" ]
+        core.delete [ "Shift+F8" ]
+        core.deselect.all [ "Escape" ]
+        core.documentation [ "F1" ]
+        core.duplicate [ "Cmd+D" ]
+        core.edit [ "F4" ]
+        core.favorites [ "Alt+2" ]
+        core.forward [ "Alt+Right" ]
+        core.get.info [ "Cmd+I" ]
+        core.go.up [ "Backspace" ]
+        core.goto.path [ "Cmd+G" ]
+        core.hierarchy [ "Alt+0" ]
+        core.lookup [ "Cmd+P" ]
+        core.lookup.here [ "Cmd+Alt+P" ]
+        core.move [ "F6" ]
+        core.move.down [ "Down" ]
+        core.move.end [ "End" ]
+        core.move.half.page.down [ "Alt+PageDown" ]
+        core.move.half.page.up [ "Alt+PageUp" ]
+        core.move.home [ "Home" ]
+        core.move.left [ "Left" ]
+        core.move.page.down [ "PageDown" ]
+        core.move.page.up [ "PageUp" ]
+        core.move.right [ "Right" ]
+        core.move.up [ "Up" ]
+        core.new.directory [ "F7" ]
+        core.new.file [ "Shift+F7" ]
+        core.new.tab [ "Cmd+T" ]
+        core.new.window [ "Cmd+N" ]
+        core.open [ "Return" ]
+        core.open.editor.here [ "Shift+F4" ]
+        core.open.terminal.here [ "F11" ]
+        core.open.with [ "Cmd+Return" ]
+        core.paste [ "Cmd+V" ]
+        core.preferences [ "Cmd+," ]
+        core.preview [ "Cmd+Y" "Space" ]
+        core.recent.directories [ "Alt+3" ]
+        core.refresh [ "F2" ]
+        core.rename [ "Shift+F6" ]
+        core.select.all [ "Cmd+A" ]
+        core.select.all.after [ "Shift+Alt+Down" ]
+        core.select.all.before [ "Shift+Alt+Up" ]
+        core.select.move.down [ "Shift+Down" ]
+        core.select.move.left [ "Shift+Left" ]
+        core.select.move.right [ "Shift+Right" ]
+        core.select.move.up [ "Shift+Up" ]
+        core.show.operation.queue [ "=" ]
+        core.toggle.show.hidden.files [ "Control+H" ]
+        core.toggle.terminal [ "Cmd+Alt+O" ]
+        core.trash [ "F8" "Cmd+Backspace" ]
+        core.volumes [ "Alt+1" ]
+    }
+
+    menu [
+        {
+            name "marta"
+
+            children [
+                "core.about"
+                "core.check.for.updates"
+                "core.preferences"
+            ]
+        }
+        {
+            name "File"
+
+            children [
+                "core.new.file"
+                "core.new.directory"
+                "separator"
+                "core.open"
+                "core.open.with"
+                "core.edit"
+                "core.preview"
+                "separator"
+                "core.rename"
+                "core.copy"
+                "core.move"
+                "separator"
+                "core.delete"
+                "core.trash"
+            ]
+        }
+        {
+            name "Edit"
+
+            children [
+                "core.copy.to.clipboard"
+                "core.paste"
+                "separator"
+                "core.select.all"
+                "core.deselect.all"
+                "core.invert.selection"
+                "separator"
+                "core.select.group"
+                "core.deselect.group"
+            ]
+        }
+        {
+            name "View"
+
+            children [
+                "core.display.mode"
+                "core.edit.columns"
+                "core.ordering"
+                "separator"
+                "core.toggle.show.hidden.files"
+                "core.refresh"
+            ]
+        }
+        {
+            name "Go"
+
+            children [
+                "core.back"
+                "core.forward"
+                "separator"
+                "core.go.up"
+                "core.hierarchy"
+                "separator"
+                "core.favorites"
+                "core.add.to.favorites.here"
+                "separator"
+                "core.volumes"
+                "core.recent.directories"
+                "separator"
+                "core.goto.path"
+            ]
+        }
+        {
+            name "Tools"
+
+            children [
+                "core.actions"
+                "separator"
+                "core.activate.terminal"
+                "core.toggle.terminal"
+                "separator"
+                "core.copy.paths"
+                "core.copy.current.dir.path"
+                "separator"
+                "org.yanex.dirstat.open"
+                "separator"
+                "core.reveal.in.finder"
+                "core.open.terminal.here"
+            ]
+        }
+        {
+            name "Window"
+
+            children [
+                "core.new.window"
+                "core.new.tab"
+                "separator"
+                "core.close.window"
+                "core.close.tab"
+                "separator"
+                "core.activate.previous.tab"
+                "core.activate.next.tab"
+                "core.wrap.panes"
+            ]
+        }
+    ]
+
+    setup {
+        actionBar [
+            "core.open.with"
+            "core.edit"
+            "core.copy"
+            "core.move"
+            "core.rename"
+            "core.new.directory"
+            "core.delete"
+        ]
+
+        pinnedPlaces [
+            {
+                path "user.home"
+            }
+            {
+                path "user.downloads"
+            }
+            {
+                path "user.documents"
+            }
+            {
+                path "user.desktop"
+            }
+            {
+                name "Library"
+                path "user.library"
+            }
+            {
+                path "system.applications"
+            }
+        ]
+
+        touchBar [
+            {
+                action "core.favorites"
+            }
+            {
+                action "core.recent.directories"
+            }
+            {
+                action "core.toggle.show.hidden.files"
+            }
+            {
+                action "core.edit"
+                modifiers "-Shift"
+            }
+            {
+                action "core.open.editor.here"
+                modifiers "Shift"
+            }
+            {
+                action "core.new.directory"
+                backgroundColor "#624a2d"
+                modifiers "-Shift"
+            }
+            {
+                action "core.new.file"
+                backgroundColor "#624a2d"
+                modifiers "Shift"
+            }
+            {
+                action "core.copy"
+                backgroundColor "#495e4d"
+            }
+            {
+                action "core.move"
+                backgroundColor "#3c4554"
+                modifiers "-Shift"
+            }
+            {
+                action "core.rename"
+                backgroundColor "#3c4554"
+                modifiers "Shift"
+            }
+            {
+                action "core.trash"
+                backgroundColor "#5f0405"
+                modifiers "-Shift"
+            }
+            {
+                action "core.delete"
+                backgroundColor "#5f0405"
+                modifiers "Shift"
+            }
+        ]
+    }
+}

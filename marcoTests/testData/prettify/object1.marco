@@ -1,0 +1,16 @@
+--before
+{
+    hello "world"
+    array [1 2 3]
+}
+
+--after
+{
+    hello "world"
+
+    array [
+        1
+        2
+        3
+    ]
+}

@@ -1,0 +1,17 @@
+--before
+{"hello": "world", "array": [1, 2, 3, true, false, "a", {}, [], [1]]}
+
+--after
+{"hello": "world", "array": [1, 2, 3, true, false, "a", {}, [], [1]]}
+
+8: Invalid character: Marco does not use ':' as a separator
+17: Invalid character: Marco does not use ',' as a separator
+26: Invalid character: Marco does not use ':' as a separator
+30: Invalid character: Marco does not use ',' as a separator
+33: Invalid character: Marco does not use ',' as a separator
+36: Invalid character: Marco does not use ',' as a separator
+42: Invalid character: Marco does not use ',' as a separator
+49: Invalid character: Marco does not use ',' as a separator
+54: Invalid character: Marco does not use ',' as a separator
+58: Invalid character: Marco does not use ',' as a separator
+62: Invalid character: Marco does not use ',' as a separator

@@ -1,0 +1,7 @@
+--before
+foo
+
+--after
+2: 'false' expected
+
+fo💥

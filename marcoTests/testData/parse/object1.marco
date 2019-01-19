@@ -1,0 +1,29 @@
+--before
+{
+    !toDelete true
+
+    firstName "Jack"
+    familyName "Smith"
+    age 16
+    gender "M"
+    ownsCar false
+    !ownsApartment true
+    ownsApartment false
+    eyeColor #1111cc
+
+    hobbies [ "Swimming" "Dancing" "Music" ]
+
+    family {
+        mother {
+            firstName "Mary"
+            familyName "Smith"
+            age 40
+        }
+
+        !father {
+            "firstName" "Nick"
+            familyName "Smith"
+            age 41
+        }
+    }
+}

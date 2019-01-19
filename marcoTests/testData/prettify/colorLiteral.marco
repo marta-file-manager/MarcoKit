@@ -1,0 +1,5 @@
+--before
+#cc0000
+
+--after
+#cc0000

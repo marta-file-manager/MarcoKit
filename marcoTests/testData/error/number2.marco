@@ -1,0 +1,7 @@
+--before
+1.0.2
+
+--after
+3: Duplicating '.' in a number literal
+
+1.0💥

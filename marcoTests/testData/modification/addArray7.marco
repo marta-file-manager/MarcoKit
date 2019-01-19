@@ -1,0 +1,29 @@
+--before
+[
+    "John"
+    "Smith"
+]
+
+--add
+{
+    color #000000
+    shape "circle"
+    border {
+        visible true
+        color #ff0000
+    }
+}
+
+--after
+[
+    "John"
+    "Smith"
+    {
+        color #000000
+        shape "circle"
+        border {
+            visible true
+            color #ff0000
+        }
+    }
+]

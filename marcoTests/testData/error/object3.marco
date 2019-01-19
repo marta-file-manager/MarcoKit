@@ -1,0 +1,7 @@
+--before
+{a "b" c
+
+--after
+8: Unexpected end of file
+
+{a "b" c💥

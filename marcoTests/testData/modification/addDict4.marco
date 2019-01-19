@@ -1,0 +1,25 @@
+--before
+{}
+
+--add a
+{}
+
+--add a, b
+{}
+
+--add a, b, c
+{}
+
+--add a, b, c, d
+{}
+
+--after
+{
+    a {
+        b {
+            c {
+                d {}
+            }
+        }
+    }
+}

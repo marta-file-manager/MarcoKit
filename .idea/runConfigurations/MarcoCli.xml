@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="MarcoCli" type="AppleRunConfiguration" factoryName="Application" PROGRAM_PARAMS="j2m $PROJECT_DIR$/../marta/marta/resources/Themes/old.Commander.theme --config" PASS_PARENT_ENVS_2="true" PROJECT_NAME="marco" TARGET_NAME="MarcoCli" CONFIG_NAME="Debug" SCHEME_NAME="MarcoCli" IS_LOCATION_SIMULATION_ALLOWED="true" RUN_TARGET_PROJECT_NAME="marco" RUN_TARGET_NAME="MarcoCli" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+    <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+      <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+    </EXTENSION>
+    <embedded_app_extension_list />
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

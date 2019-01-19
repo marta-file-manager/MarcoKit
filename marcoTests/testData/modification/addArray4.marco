@@ -1,0 +1,10 @@
+--before
+["John"
+]
+
+--add
+"Smith"
+
+--after
+["John" "Smith"
+]

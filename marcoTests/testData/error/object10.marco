@@ -1,0 +1,7 @@
+--before
+{"a"0 "b"1}
+
+--after
+4: Whitespace required in a key-value pair
+
+{"a"💥

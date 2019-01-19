@@ -1,0 +1,21 @@
+--before
+foo {
+    a 1
+    b 2
+}
+
+bar {}
+
+--remove foo
+
+--add foo
+{
+    c 3
+    d 4
+}
+
+--after
+bar {} foo {
+    c 3
+    d 4
+}

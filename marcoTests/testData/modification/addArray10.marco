@@ -1,0 +1,16 @@
+--before
+[]
+
+--add
+{
+    firstName "Jack"
+    "lastName" "Smith"
+}
+
+--after
+[
+    {
+        firstName "Jack"
+        "lastName" "Smith"
+    }
+]

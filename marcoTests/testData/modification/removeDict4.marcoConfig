@@ -1,0 +1,26 @@
+--before
+foo {
+    a 1
+}
+
+bar {
+    b 2
+}
+
+--add baz, c
+3
+
+--get bar, b
+2
+
+--after
+foo {
+    a 1
+}
+
+bar {
+    b 2
+}
+baz {
+    c 3
+}
