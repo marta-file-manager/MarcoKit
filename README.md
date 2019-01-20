@@ -5,7 +5,7 @@ Also, this is a reference implementation of the Marco parser.
 
 ## What is Marco?
 
-Marco is a new configuration and data serialization format. You can read more about it [here](https://github.com/marta-file-manager/marco/blob/master/docs/MARCO.md).
+Marco is a new configuration and data serialization format. You can read more about it [here](https://github.com/marta-file-manager/MarcoKit/blob/master/docs/MARCO.md).
 
 ## Library features
 
@@ -29,7 +29,7 @@ I didn't do any serious performance comparison with other serialization librarie
 
 ## Contributing
 
-MarcoKit is available under the [Apache 2.0 License](https://github.com/marta-file-manager/marco/blob/master/LICENSE).
+MarcoKit is available under the [Apache 2.0 License](https://github.com/marta-file-manager/MarcoKit/blob/master/LICENSE).
 
 If you send a Pull Request, please ensure that all existing tests are passing ("All Tests" scheme, Product → Test).  
 If you fixed a bug, add the new test or modify the existing one to check the new behavior.  
