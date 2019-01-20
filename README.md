@@ -19,7 +19,7 @@ MarcoKit allows you to:
 
 ## Documentation
 
-The API reference is available [here](https://marta-file-manager.github.io/marco/api/index.html).
+The API reference is available [here](https://marta-file-manager.github.io/MarcoKit/api/index.html).
 
 ## Performance 
 
