@@ -17,6 +17,12 @@ MarcoKit allows you to:
 - Minify or prettify Marco documents;
 - Convert Marco to Objective-C representation of JSON and vice-versa.
 
+## Carthage
+
+MarcoKit can be imported as a [Carthage](https://github.com/Carthage/Carthage) dependency:
+
+`github "marta-file-manager/MarcoKit" "v0.1"`
+
 ## Documentation
 
 The API reference is available [here](https://marta-file-manager.github.io/MarcoKit/api/index.html).
