@@ -11,6 +11,7 @@ public protocol MarcoValue : class, CustomStringConvertible {
     /** Value text. */
     var text: String { get }
 
+    /** Pass this element to the given `visitor`. */
     func accept<V, D, R>(_ visitor: V, data: D) -> R where V : MarcoVisitor, V.ReturnType == R, V.Data == D
 }
 

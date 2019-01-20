@@ -2,6 +2,7 @@ import Foundation
 
 /** Marco integer value. */
 public protocol MarcoIntLiteral : MarcoNumberLiteral {
+    /** True if this literal is a color literal. */
     var isColor: Bool { get }
 }
 

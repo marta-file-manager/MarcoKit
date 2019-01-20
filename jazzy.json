@@ -11,5 +11,55 @@
     "hide_documentation_coverage": true,
     "skip_undocumented": true,
     "readme": "README.md",
-    "theme": "fullwidth"
+    "theme": "fullwidth",
+
+    "custom_categories": 
+    [
+        {
+            "name": "Values",
+            "children": [
+                "MarcoValue",
+                "MarcoDocument",
+                "MarcoNumberLiteral",
+                "MarcoIntLiteral",
+                "MarcoDoubleLiteral",
+                "MarcoStringLiteral",
+                "MarcoBoolLiteral",
+                "MarcoArray",
+                "MarcoObject",
+                "MarcoIdentifier",
+                "MarcoNullLiteral"
+            ]
+        },
+        {
+            "name": "Parsing",
+            "children": [
+                "Marco",
+                "MarcoParsingError",
+                "MarcoNonStrictParsingError"
+            ]
+        },
+        {
+            "name": "Visitor",
+            "children": [
+                "MarcoVisitor"
+            ]
+        }, {
+            "name": "Extensions",
+            "children": [
+                "Int",
+                "Int32",
+                "UInt32",
+                "Int64",
+                "UInt64",
+                "NSColor",
+                "Float",
+                "Double",
+                "CGFloat",
+                "String",
+                "Bool",
+                "NSNull"
+            ]
+        }
+    ]
 }

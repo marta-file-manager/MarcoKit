@@ -8,9 +8,10 @@ public protocol MarcoObject : MarcoValue {
     /** All value keys. */
     var keys: [String] { get }
 
-    /** Returns an element with a specified `key`. */
+    /** Returns an element for a specified `key`. */
     subscript(key: String) -> MarcoValue? { get set }
-    
+
+    /** Returns a key identifier for a specified `key`. */
     func identifier(key: String) -> MarcoIdentifier?
 
     /** Removes an element with a specified `key`. */
@@ -101,7 +102,9 @@ public extension MarcoObject {
     }
 }
 
+/** Marco object key identifier. */
 public protocol MarcoIdentifier {
+    /** Identifier text. */
     var value: String { get }
     
     /** Element offset in a parent. Call `MarcoDocument`.`updateOffsets()` to initialize this property. */

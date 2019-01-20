@@ -1,8 +1,10 @@
 import Foundation
 
+/** Marco utilities. */
 public class Marco {
     private init() {}
 
+    /** Parsing options. */
     public struct Options : OptionSet {
         public let rawValue: UInt
 
@@ -10,7 +12,10 @@ public class Marco {
             self.rawValue = rawValue
         }
 
+        /** Parse a configuration file. */
         public static let config = Options(rawValue: 1)
+
+        /** Throw `MarcoNonStrictParsingError` in case of non-critical parsing erorrs. */
         public static let nonStrict = Options(rawValue: 2)
     }
 

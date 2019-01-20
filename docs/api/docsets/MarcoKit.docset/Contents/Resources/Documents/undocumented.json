@@ -1,31 +1,24 @@
 {
   "warnings": [
     {
-      "file": "/Users/yan/projects/marco/marco/api/Marco.swift",
-      "line": null,
-      "symbol": "Marco",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/yan/projects/marco/marco/api/Marco.swift",
-      "line": 3,
-      "symbol": "Marco",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "file": "/Users/yan/projects/marco/marco/api/MarcoParsingError.swift",
+      "line": 17,
+      "symbol": "MarcoParsingError.localizedDescription",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/yan/projects/marco/marco/api/MarcoParsingError.swift",
-      "line": 3,
-      "symbol": "MarcoParsingError",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "line": 32,
+      "symbol": "MarcoParsingError.ErrorKind",
+      "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/yan/projects/marco/marco/api/MarcoParsingError.swift",
-      "line": 29,
-      "symbol": "MarcoNonStrictParsingError",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "line": 45,
+      "symbol": "MarcoNonStrictParsingError.localizedDescription",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
@@ -72,23 +65,9 @@
     },
     {
       "file": "/Users/yan/projects/marco/marco/api/values/MarcoArray.swift",
-      "line": 123,
-      "symbol": "MarcoArray.accept(_:data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoArray.swift",
       "line": 128,
       "symbol": "MarcoArraySequence",
       "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoBoolLiteral.swift",
-      "line": 10,
-      "symbol": "MarcoBoolLiteral.accept(_:data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -99,71 +78,8 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoDocument.swift",
-      "line": 15,
-      "symbol": "MarcoDocument.accept(_:data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoDoubleLiteral.swift",
-      "line": 11,
-      "symbol": "MarcoDoubleLiteral.accept(_:data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoIntLiteral.swift",
-      "line": 5,
-      "symbol": "MarcoIntLiteral.isColor",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoIntLiteral.swift",
-      "line": 13,
-      "symbol": "MarcoIntLiteral.accept(_:data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoNullLiteral.swift",
-      "line": 7,
-      "symbol": "MarcoNullLiteral.accept(_:data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoNumberLiteral.swift",
-      "line": 13,
-      "symbol": "MarcoNumberLiteral.accept(_:data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/yan/projects/marco/marco/api/values/MarcoObject.swift",
-      "line": 14,
-      "symbol": "MarcoObject.identifier(key:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoObject.swift",
-      "line": 99,
-      "symbol": "MarcoObject.accept(_:data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoObject.swift",
-      "line": 104,
-      "symbol": "MarcoIdentifier",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoObject.swift",
-      "line": 114,
+      "line": 117,
       "symbol": "MarcoObjectSequence",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
@@ -176,22 +92,8 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoStringLiteral.swift",
-      "line": 9,
-      "symbol": "MarcoStringLiteral.accept(_:data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/yan/projects/marco/marco/api/values/MarcoValue.swift",
-      "line": 14,
-      "symbol": "MarcoValue.accept(_:data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/yan/projects/marco/marco/api/values/MarcoValue.swift",
-      "line": 22,
+      "line": 23,
       "symbol": "MarcoValue.accept(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
