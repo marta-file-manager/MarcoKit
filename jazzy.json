@@ -1,0 +1,15 @@
+{
+    "xcodebuild_arguments": ["-scheme", "MarcoKit"],
+    "author": "Yan Zhulanow",
+    "author_url": "https://marta.yanex.org",
+    "module": "MarcoKit",
+    "module_version": "1.0",
+    "source_directory": ".",
+    "framework_root": ".",
+    "output": "api",
+    "use_safe_filenames": true,
+    "hide_documentation_coverage": true,
+    "skip_undocumented": true,
+    "readme": "README.md",
+    "theme": "fullwidth"
+}

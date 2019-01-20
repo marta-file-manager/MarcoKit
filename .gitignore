@@ -32,3 +32,6 @@ xcuserdata/
 .DS_Store
 .Trashes
 *.swp
+
+# Jazzy
+build/
