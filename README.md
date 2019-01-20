@@ -17,6 +17,10 @@ MarcoKit allows you to:
 - Minify or prettify Marco documents;
 - Convert Marco to Objective-C representation of JSON and vice-versa.
 
+## Documentation
+
+The API reference is available [here](https://marta-file-manager.github.io/marco/api/index.html).
+
 ## Performance 
 
 While Marco syntax as easy to parse as JSON, MarcoKit backs Marco values with AST elements. This allows you to modify the document contents without losing the formatting and to implement code insight features. However, this comes as a cost of performance.
