@@ -6,7 +6,7 @@
     "module_version": "1.0",
     "source_directory": ".",
     "framework_root": ".",
-    "output": "gh-pages",
+    "output": "docs/api",
     "use_safe_filenames": true,
     "hide_documentation_coverage": true,
     "skip_undocumented": true,

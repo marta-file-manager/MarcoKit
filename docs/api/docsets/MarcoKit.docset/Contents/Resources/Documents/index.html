@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MarcoKit  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="MarcoKit  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          MarcoKit Docs
+        </a>
+        
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">MarcoKit Reference</a>
+      <img class="carat" src="img/carat.png" />
+      MarcoKit  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/Float.html">Float</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/Int.html">Int</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/Int32.html">Int32</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/Int64.html">Int64</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/NSColor.html">NSColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/NSNull.html">NSNull</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/UInt32.html">UInt32</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/UInt64.html">UInt64</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MarcoArray.html">MarcoArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MarcoBoolLiteral.html">MarcoBoolLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MarcoDocument.html">MarcoDocument</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MarcoDoubleLiteral.html">MarcoDoubleLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MarcoIntLiteral.html">MarcoIntLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols.html#/s:8MarcoKit0A11NullLiteralP">MarcoNullLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MarcoNumberLiteral.html">MarcoNumberLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MarcoObject.html">MarcoObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols.html#/s:8MarcoKit0A13StringLiteralP">MarcoStringLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MarcoValue.html">MarcoValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MarcoVisitor.html">MarcoVisitor</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            
+            <h1 id='marcokit-marco-parsing-library-for-swift' class='heading'>MarcoKit: Marco parsing library for Swift</h1>
+
+<p>This is a Swift library for working with Marco configuration/value files.<br>
+Also, this is a reference implementation of the Marco parser.</p>
+<h2 id='what-is-marco' class='heading'>What is Marco?</h2>
+
+<p>Marco is a new configuration and data serialization format. You can read more about it <a href="doc/MARCO.md">here</a>.</p>
+<h2 id='library-features' class='heading'>Library features</h2>
+
+<p>MarcoKit allows you to:</p>
+
+<ul>
+<li>Parse Marco value/configuration files;</li>
+<li>Modify and serialize documents back to <code>String</code> (formatting is preserved);</li>
+<li>Create new Marco documents;</li>
+<li>Minify or prettify Marco documents;</li>
+<li>Convert Marco to Objective-C representation of JSON and vice-versa.</li>
+</ul>
+<h2 id='performance' class='heading'>Performance</h2>
+
+<p>While Marco syntax as easy to parse as JSON, MarcoKit backs Marco values with AST elements. This allows you to modify the document contents without losing the formatting and to implement code insight features. However, this comes as a cost of performance.</p>
+
+<p>I didn&rsquo;t do any serious performance comparison with other serialization libraries, but the testing shows that using MarcoKit may not be the best idea if you have huge data chunks. However, the difference is unnoticeable for common configuration file use-cases.</p>
+<h2 id='contributing' class='heading'>Contributing</h2>
+
+<p>MarcoKit is available under the <a href="LICENSE">Apache 2.0 License</a>.  </p>
+
+<p>If you send a Pull Request, please ensure that all existing tests are passing (<q>All Tests</q> scheme, Product → Test).<br>
+If you fixed a bug, add the new test or modify the existing one to check the new behavior.<br>
+If you plan to change the Marco format, consider making an issue describing your problem and a proposed solution.</p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://marta.yanex.org" target="_blank" rel="external">Yan Zhulanow</a>. All rights reserved. (Last updated: 2019-01-20)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
