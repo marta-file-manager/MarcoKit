@@ -5,7 +5,7 @@ internal class MarcoArrayNode : MarcoCollectionNode, MarcoValueNode, MarcoArray 
     var offset: Int = 0
     
     var children: [MarcoNode]
-    private var elementIndices: [Int]
+    var elementIndices: [Int]
 
     init(children: [MarcoNode], elementIndices: [Int]) {
         self.children = children

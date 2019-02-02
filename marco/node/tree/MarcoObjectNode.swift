@@ -7,7 +7,7 @@ internal class MarcoObjectNode : MarcoCollectionNode, MarcoValueNode, MarcoObjec
     var offset: Int = 0
     
     var children: [MarcoNode]
-    private var keyMappings: [String: Int]
+    var keyMappings: [String: Int]
     
     init(children: [MarcoNode], keyMappings: [String: Int], isConfig: Bool) {
         self.hasEnclosingElements = !isConfig

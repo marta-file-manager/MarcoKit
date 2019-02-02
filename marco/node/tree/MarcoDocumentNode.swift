@@ -5,8 +5,7 @@ internal class MarcoDocumentNode : MarcoTreeNode, MarcoValueNode, MarcoDocument 
     var offset: Int = 0
 
     var children: [MarcoNode]
-
-    private let valueIndex: Int
+    var valueIndex: Int
 
     init(children: [MarcoNode], valueIndex: Int) {
         self.children = children

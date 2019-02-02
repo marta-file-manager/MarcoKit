@@ -3,10 +3,14 @@ import Foundation
 internal class PrettifyingVisitor : MarcoVisitor {
     private let indent: String
     private let forceNewLine: Bool
+    private let isRecursive: Bool
+    private let reorderKeys: Bool
 
-    init(indent: String = "    ", forceNewLine: Bool) {
+    init(indent: String = "    ", forceNewLine: Bool, isRecursive: Bool, reorderKeys: Bool) {
         self.indent = indent
         self.forceNewLine = forceNewLine
+        self.isRecursive = isRecursive
+        self.reorderKeys = reorderKeys
     }
 
     typealias ReturnType = MarcoValueNode
@@ -16,8 +20,16 @@ internal class PrettifyingVisitor : MarcoVisitor {
         return (value as! MarcoNode).clone() as! MarcoValueNode
     }
 
+    private func prettifyIfNeeded(_ value: MarcoValue, data: Int) -> MarcoValueNode {
+        guard isRecursive else {
+            return (value as! MarcoValueNode).clone() as! MarcoValueNode
+        }
+
+        return value.accept(self, data: data)
+    }
+
     func visitDocument(value: MarcoDocument, data: Int) -> MarcoValueNode {
-        let newChild = value.value.accept(self, data: data)
+        let newChild = prettifyIfNeeded(value.value, data: data)
         return MarcoDocumentNode(children: [newChild], valueIndex: 0)
     }
 
@@ -52,11 +64,13 @@ internal class PrettifyingVisitor : MarcoVisitor {
             nodes.append(WSnl("\n" + childIndent))
         }
 
-        let sortedKeys = sortObjectKeys(keys: value.keys) { value[$0]!.isSimple }
+        let sortedKeys = reorderKeys
+            ? sortObjectKeys(keys: value.keys) { value[$0]!.isSimple }
+            : value.keys
 
         for key in sortedKeys {
             let dataForKey = valueNode.hasEnclosingElements ? (data + 1) : data
-            let valueNodeForKey = value[key]!.accept(self, data: dataForKey)
+            let valueNodeForKey = prettifyIfNeeded(value[key]!, data: dataForKey)
 
             if (!keyMappings.isEmpty) {
                 if (!valueNodeForKey.isSimple) {
@@ -128,7 +142,7 @@ internal class PrettifyingVisitor : MarcoVisitor {
 
             for index in 0..<value.count {
                 elementIndices.append(nodes.count)
-                nodes.append(value[index].accept(self, data: data + 1))
+                nodes.append(prettifyIfNeeded(value[index], data: data + 1))
                 nodes.append(WS(" "))
             }
         } else {

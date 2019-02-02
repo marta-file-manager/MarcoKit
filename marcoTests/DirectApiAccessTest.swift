@@ -64,4 +64,11 @@ class DirectApiAccessTest: XCTestCase {
         let str = document.value.asString!
         XCTAssertEqual("\t\r\nA", str)
     }
+
+    func testAdding() {
+        let obj = Marco.object(("foo", 1.toMarco), ("bar", 2.toMarco), ("baz", 3.toMarco))
+        obj["boo"] = "foo".toMarco
+        let text = Marco.prettify(obj, reorderKeys: false).text
+        XCTAssertEqual("{\n    foo 1\n    bar 2\n    baz 3\n    boo \"foo\"\n}", text)
+    }
 }

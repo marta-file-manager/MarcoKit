@@ -133,8 +133,10 @@ public extension Marco {
         This does not change the original value.
         All existing formatting will be removed.
     */
-    public static func prettify(_ value: MarcoValue) -> MarcoValue {
-        return value.accept(PrettifyingVisitor(forceNewLine: false), data: 0)
+    public static func prettify(_ value: MarcoValue, reorderKeys: Bool = true) -> MarcoValue {
+        return value.accept(
+            PrettifyingVisitor(forceNewLine: false, isRecursive: true, reorderKeys: reorderKeys),
+            data: 0)
     }
 
     /** Returns a JSON string for the given Marco object. */

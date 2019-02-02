@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D266091F72239643584A8E9 /* MarcoStringLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26664800490346393E5405 /* MarcoStringLiteral.swift */; };
 		1D266143AB2A36BC380F7B3B /* testUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266CC76B65D105D440F0C4 /* testUtils.swift */; };
+		1D26618F71213F1B3AC4F540 /* MutatingPrettifyingVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266568F68DC3AEED92BC65 /* MutatingPrettifyingVisitor.swift */; };
 		1D2662899A52F292519C84B8 /* MarcoDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266EB1BA4D65F6647EE339 /* MarcoDocument.swift */; };
 		1D2663064FC844CF2F2E3180 /* ParseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2663EFF025AD9A5252AA2A /* ParseTest.swift */; };
 		1D26654006B433CA8728CBA2 /* MarcoBoolLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26636A5F6471D44E50B3C2 /* MarcoBoolLiteral.swift */; };
@@ -22,12 +23,13 @@
 		1D2668C90F2D5F6F01CF59E5 /* MarcoDoubleLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266249E6EAC657C07ED089 /* MarcoDoubleLiteral.swift */; };
 		1D2669A4AF509486A5736E84 /* ModificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266B4F0574CD8C9B4CB0CC /* ModificationTest.swift */; };
 		1D2669ABEDBF6B55D5EE5D26 /* MarcoIntLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266421511CA297DDD8DCD7 /* MarcoIntLiteral.swift */; };
-		1D266A0EDB5122F6D22C2DA1 /* MarcoRootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266206C63828999B2DDF79 /* MarcoRootNode.swift */; };
+		1D266A0EDB5122F6D22C2DA1 /* MarcoDocumentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266206C63828999B2DDF79 /* MarcoDocumentNode.swift */; };
 		1D266A670CAAC6815BCE3E7E /* FromJsonConversionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266758F2C7ED7585EFE8C1 /* FromJsonConversionTest.swift */; };
 		1D266B19F176D83D3CB4E4EE /* MarcoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266A616169DBB579EE961B /* MarcoObject.swift */; };
 		1D266C02F8E324E61714B2C3 /* MarcoNullLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266C263D05771DFBB5178D /* MarcoNullLiteral.swift */; };
 		1D266C45C9A5D89977F07E33 /* PrettifyingVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266D24CC6D84EE9C13B2C9 /* PrettifyingVisitor.swift */; };
 		1D266C9DA437B577E3A57163 /* ErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26605A6894C1686C2B54F8 /* ErrorTest.swift */; };
+		1D266E01D38F7B783237EDBD /* MutatingPrettifyingVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266568F68DC3AEED92BC65 /* MutatingPrettifyingVisitor.swift */; };
 		1D266E3AAA6C800850A54070 /* XCTestCaseWithTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2667158F0954E1EE7F7108 /* XCTestCaseWithTestData.swift */; };
 		1D266EB871DD561CFD5D058C /* MarcoParsingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266761B5842A63AA7BD576 /* MarcoParsingError.swift */; };
 		1D266EE87CCAA09A8489C700 /* JsonToMarcoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2661F8BD0E7D1CF126F5EF /* JsonToMarcoConverter.swift */; };
@@ -63,7 +65,7 @@
 		2C9E6F9321CF0948001BD19B /* MarcoArrayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C2FC8217E72AE00D69A39 /* MarcoArrayNode.swift */; };
 		2C9E6F9421CF0948001BD19B /* MarcoKeyValuePairNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C2FC9217E72AE00D69A39 /* MarcoKeyValuePairNode.swift */; };
 		2C9E6F9521CF0948001BD19B /* MarcoObjectNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C2FC7217E72AE00D69A39 /* MarcoObjectNode.swift */; };
-		2C9E6F9621CF0948001BD19B /* MarcoRootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266206C63828999B2DDF79 /* MarcoRootNode.swift */; };
+		2C9E6F9621CF0948001BD19B /* MarcoDocumentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266206C63828999B2DDF79 /* MarcoDocumentNode.swift */; };
 		2C9E6F9721CF0948001BD19B /* CollectionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2669B6E5FA3E0001F0BBCA /* CollectionUtil.swift */; };
 		2C9E6F9821CF094D001BD19B /* MarcoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C2FD9217E72C300D69A39 /* MarcoParser.swift */; };
 		2C9E6F9921CF094D001BD19B /* MarcoParserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C2FDA217E72C300D69A39 /* MarcoParserState.swift */; };
@@ -130,12 +132,13 @@
 		1D26605A6894C1686C2B54F8 /* ErrorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTest.swift; sourceTree = "<group>"; };
 		1D26614055F0421F29A831F7 /* MarcoNumberLiteral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoNumberLiteral.swift; sourceTree = "<group>"; };
 		1D2661F8BD0E7D1CF126F5EF /* JsonToMarcoConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonToMarcoConverter.swift; sourceTree = "<group>"; };
-		1D266206C63828999B2DDF79 /* MarcoRootNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoRootNode.swift; sourceTree = "<group>"; };
+		1D266206C63828999B2DDF79 /* MarcoDocumentNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoDocumentNode.swift; sourceTree = "<group>"; };
 		1D266249E6EAC657C07ED089 /* MarcoDoubleLiteral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoDoubleLiteral.swift; sourceTree = "<group>"; };
 		1D26636A5F6471D44E50B3C2 /* MarcoBoolLiteral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoBoolLiteral.swift; sourceTree = "<group>"; };
 		1D2663EFF025AD9A5252AA2A /* ParseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseTest.swift; sourceTree = "<group>"; };
 		1D266421511CA297DDD8DCD7 /* MarcoIntLiteral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoIntLiteral.swift; sourceTree = "<group>"; };
 		1D26643F72213D27E5B5B416 /* MarcoArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoArray.swift; sourceTree = "<group>"; };
+		1D266568F68DC3AEED92BC65 /* MutatingPrettifyingVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutatingPrettifyingVisitor.swift; sourceTree = "<group>"; };
 		1D26664800490346393E5405 /* MarcoStringLiteral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoStringLiteral.swift; sourceTree = "<group>"; };
 		1D266712225D2BF1C561ABF5 /* marcoUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = marcoUtils.swift; sourceTree = "<group>"; };
 		1D2667158F0954E1EE7F7108 /* XCTestCaseWithTestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseWithTestData.swift; sourceTree = "<group>"; };
@@ -335,6 +338,7 @@
 				1D266D24CC6D84EE9C13B2C9 /* PrettifyingVisitor.swift */,
 				1D2669073EBB794F0DDCB15A /* ToJsonVisitor.swift */,
 				1D2661F8BD0E7D1CF126F5EF /* JsonToMarcoConverter.swift */,
+				1D266568F68DC3AEED92BC65 /* MutatingPrettifyingVisitor.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -359,7 +363,7 @@
 				2C8C2FC8217E72AE00D69A39 /* MarcoArrayNode.swift */,
 				2C8C2FC9217E72AE00D69A39 /* MarcoKeyValuePairNode.swift */,
 				2C8C2FC7217E72AE00D69A39 /* MarcoObjectNode.swift */,
-				1D266206C63828999B2DDF79 /* MarcoRootNode.swift */,
+				1D266206C63828999B2DDF79 /* MarcoDocumentNode.swift */,
 				1D2669B6E5FA3E0001F0BBCA /* CollectionUtil.swift */,
 			);
 			path = tree;
@@ -547,7 +551,7 @@
 				2C8C2FC5217E72A800D69A39 /* MarcoIntLiteralNode.swift in Sources */,
 				2C8C2FD5217E72B900D69A39 /* MarcoStringLiteralNode.swift in Sources */,
 				2C8C2FBB217E72A100D69A39 /* NumberExtensions.swift in Sources */,
-				1D266A0EDB5122F6D22C2DA1 /* MarcoRootNode.swift in Sources */,
+				1D266A0EDB5122F6D22C2DA1 /* MarcoDocumentNode.swift in Sources */,
 				1D2667E36F2C0610990D667A /* MarcoValue.swift in Sources */,
 				1D266B19F176D83D3CB4E4EE /* MarcoObject.swift in Sources */,
 				1D266FB16B54131CEB503AFB /* MarcoArray.swift in Sources */,
@@ -563,6 +567,7 @@
 				1D266EE87CCAA09A8489C700 /* JsonToMarcoConverter.swift in Sources */,
 				1D26661BDD1A18F054953FA5 /* CollectionUtil.swift in Sources */,
 				1D266EB871DD561CFD5D058C /* MarcoParsingError.swift in Sources */,
+				1D266E01D38F7B783237EDBD /* MutatingPrettifyingVisitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,7 +612,7 @@
 				2C9E6F9D21CF0950001BD19B /* ToJsonVisitor.swift in Sources */,
 				2CE4FF2D21CF087000C2C6A6 /* MarcoStringLiteralNode.swift in Sources */,
 				2CE4FF2721CF086C00C2C6A6 /* MarcoDoubleLiteralNode.swift in Sources */,
-				2C9E6F9621CF0948001BD19B /* MarcoRootNode.swift in Sources */,
+				2C9E6F9621CF0948001BD19B /* MarcoDocumentNode.swift in Sources */,
 				2CE4FF1821CF084300C2C6A6 /* Conversions.swift in Sources */,
 				2CE4FF2921CF086C00C2C6A6 /* MarcoIntLiteralNode.swift in Sources */,
 				2CE4FF2321CF084B00C2C6A6 /* MarcoDocument.swift in Sources */,
@@ -630,6 +635,7 @@
 				2C9E6F9521CF0948001BD19B /* MarcoObjectNode.swift in Sources */,
 				2C9E6F9A21CF0950001BD19B /* MarcoNodeUtil.swift in Sources */,
 				2CE4FF2E21CF087000C2C6A6 /* MarcoStructuralElementNode.swift in Sources */,
+				1D26618F71213F1B3AC4F540 /* MutatingPrettifyingVisitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

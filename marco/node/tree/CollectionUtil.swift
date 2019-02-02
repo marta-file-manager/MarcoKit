@@ -136,14 +136,9 @@ internal extension MarcoCollectionNode {
 
     private func prettifySelf() {
         let indentInParent = self.indentInParent()
-        let newCollectionNode = self.accept(PrettifyingVisitor(forceNewLine: true), data: 0) as! MarcoCollectionNode
-        newCollectionNode.applyIndent(indent: indentInParent)
-
-        let newChildren = newCollectionNode.children
-        newChildren.forEach { $0.parent = self }
-        let oldChildren = self.children
-        self.children = newChildren
-        oldChildren.forEach { $0.parent = nil }
+        let visitor = MutatingPrettifyingVisitor(forceNewLine: true, isRecursive: false, reorderKeys: false)
+        _ = self.accept(visitor, data: 0)
+        self.applyIndent(indent: indentInParent)
     }
 
     private func isItem(_ node: MarcoNode) -> Bool {
