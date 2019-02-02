@@ -49,6 +49,16 @@ class DirectApiAccessTest: XCTestCase {
         XCTAssertEqual(3, max)
     }
 
+    func testNewObject() {
+        let obj = Marco.object(("foo", 1.toMarco), ("bar", 2.toMarco), ("baz", 3.toMarco))
+        XCTAssertEqual(3, obj["baz"]?.asInt ?? 0)
+    }
+
+    func testNewArray() {
+        let arr = Marco.array(1.toMarco, 2.toMarco, 3.toMarco)
+        XCTAssertEqual(3, arr[2].asIntOrZero)
+    }
+
     func testSpecialChars() {
         let document = try! Marco.parse("\"\\t\\r\\n\\u0041\"")
         let str = document.value.asString!

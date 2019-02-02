@@ -68,6 +68,7 @@ public class Marco {
                 children.append(WS(" "))
             }
 
+            elementIndices.append(children.count)
             children.append(element as! MarcoNode)
         }
 
@@ -105,6 +106,7 @@ public class Marco {
                 children: [keyNode, WS(" "), value as! MarcoNode],
                 keyIndex: 0, valueIndex: 2)
 
+            keyMappings[key] = children.count
             children.append(keyValuePairNode)
         }
 
