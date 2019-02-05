@@ -1,0 +1,11 @@
+--before
+foo {
+    a 1
+}}
+
+--after
+15: Whitespace required between object entries
+
+foo {
+    a 1
+}💥

@@ -128,7 +128,9 @@ internal class MarcoParser {
 
             guard try !parseCommaSeparatorIfPresent(&children) else { continue }
 
-            guard try parseStructuralIfPresent(.rightCurlyBracket, &children) else { break }
+            if (withBrackets) {
+                guard try parseStructuralIfPresent(.rightCurlyBracket, &children) else { break }
+            }
 
             if (whitespaceBeforeKey == nil && !keyMappings.isEmpty) {
                 try throwOrRecord(state.error("Whitespace required between object entries"))
