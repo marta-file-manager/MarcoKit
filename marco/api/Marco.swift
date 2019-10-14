@@ -17,6 +17,8 @@ public class Marco {
 
         /** Throw `MarcoNonStrictParsingError` in case of non-critical parsing erorrs. */
         public static let nonStrict = Options(rawValue: 2)
+
+        public static let showContextInErrors = Options(rawValue: 4)
     }
 
     /** Returns a parsed document. */

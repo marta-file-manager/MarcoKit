@@ -2,6 +2,8 @@ import Foundation
 
 internal class MarcoParserState {
     private let text: String
+    private let showContextInErrors: Bool
+
     private(set) var index: String.Index
 
     private(set) var recordedErrors = [MarcoParsingError]()
@@ -10,8 +12,10 @@ internal class MarcoParserState {
         return text.distance(from: text.startIndex, to: index)
     }
     
-    init(text: String) {
+    init(text: String, showContextInErrors: Bool) {
         self.text = text
+        self.showContextInErrors = showContextInErrors
+
         self.index = self.text.startIndex
     }
 
@@ -102,7 +106,14 @@ internal extension MarcoParserState {
         kind: MarcoParsingError.ErrorKind = .unknown
     ) -> MarcoParsingError {
         let pos = getPos(index: index)
-        let context = (pos <= 0) ? "" : text[..<index].suffix(100) + "💥"
+
+        let context: String
+        if showContextInErrors && pos > 0 {
+            context = text[..<index].suffix(100) + "💥"
+        } else {
+            context = ""
+        }
+        
         return MarcoParsingError(kind: kind, offset: pos, message: message, context: context)
     }
 }

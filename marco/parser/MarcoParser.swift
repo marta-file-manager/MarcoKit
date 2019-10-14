@@ -20,7 +20,7 @@ internal class MarcoParser {
     }
     
     private init(text: String, options: Marco.Options) {
-        state = MarcoParserState(text: text)
+        state = MarcoParserState(text: text, showContextInErrors: options.contains(.showContextInErrors))
         self.options = options
     }
 
