@@ -9,6 +9,9 @@ internal class MarcoParserState {
     private(set) var recordedErrors = [MarcoParsingError]()
 
     func getPos(index: String.Index) -> Int {
+        if text.endIndex == index {
+            return text.count
+        }
         return text.distance(from: text.startIndex, to: index)
     }
     
