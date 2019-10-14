@@ -471,15 +471,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Yan Zhulanow";
 				TargetAttributes = {
 					2C8C2F8C217E71B500D69A39 = {
 						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1110;
 					};
 					2C8C2F95217E71B500D69A39 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1110;
 					};
 					2CE4FF0521CF008800C2C6A6 = {
 						CreatedOnToolsVersion = 10.1;
@@ -492,6 +493,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 2C8C2F83217E71B500D69A39;
 			productRefGroup = 2C8C2F8E217E71B500D69A39 /* Products */;
@@ -797,6 +799,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -823,6 +826,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.yanex.marco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -841,6 +845,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.yanex.marcoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -859,12 +864,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.yanex.marcoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		2CE4FF0A21CF008800C2C6A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PYJ26U4KNX;
 				PRODUCT_NAME = marco;
@@ -875,6 +882,7 @@
 		2CE4FF0B21CF008800C2C6A6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PYJ26U4KNX;
 				PRODUCT_NAME = marco;

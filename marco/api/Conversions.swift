@@ -2,84 +2,84 @@ import Cocoa
 
 public extension String {
     /** Returns a Marco string value. */
-    public var toMarco: MarcoStringLiteral {
+    var toMarco: MarcoStringLiteral {
         return MarcoStringLiteralNode(value: self)
     }
 }
 
 public extension Int {
     /** Returns a Marco integer value. */
-    public var toMarco: MarcoIntLiteral {
+    var toMarco: MarcoIntLiteral {
         return MarcoIntLiteralNode(value: self)
     }
 }
 
 public extension Int32 {
     /** Returns a Marco integer value. */
-    public var toMarco: MarcoIntLiteral {
+    var toMarco: MarcoIntLiteral {
         return MarcoIntLiteralNode(value: Int(self))
     }
 }
 
 public extension UInt32 {
     /** Returns a Marco integer value. */
-    public var toMarco: MarcoIntLiteral {
+    var toMarco: MarcoIntLiteral {
         return MarcoIntLiteralNode(value: Int(self))
     }
 }
 
 public extension Int64 {
     /** Returns a Marco integer value. */
-    public var toMarco: MarcoIntLiteral {
+    var toMarco: MarcoIntLiteral {
         return MarcoIntLiteralNode(value: Int(self))
     }
 }
 
 public extension UInt64 {
     /** Returns a Marco integer value. */
-    public var toMarco: MarcoIntLiteral {
+    var toMarco: MarcoIntLiteral {
         return MarcoIntLiteralNode(value: Int(self))
     }
 }
 
 public extension Double {
     /** Returns a Marco double value. */
-    public var toMarco: MarcoDoubleLiteral {
+    var toMarco: MarcoDoubleLiteral {
         return MarcoDoubleLiteralNode(value: self)
     }
 }
 
 public extension Float {
     /** Returns a Marco double value. */
-    public var toMarco: MarcoDoubleLiteral {
+    var toMarco: MarcoDoubleLiteral {
         return MarcoDoubleLiteralNode(value: Double(self))
     }
 }
 
 public extension CGFloat {
     /** Returns a Marco double value. */
-    public var toMarco: MarcoDoubleLiteral {
+    var toMarco: MarcoDoubleLiteral {
         return MarcoDoubleLiteralNode(value: Double(self))
     }
 }
 
 public extension NSNull {
     /** Returns a Marco null value. */
-    public var toMarco: MarcoNullLiteral {
+    var toMarco: MarcoNullLiteral {
         return MarcoNullLiteralNode()
     }
 }
 
 public extension Bool {
     /** Returns a Marco boolean value. */
-    public var toMarco: MarcoBoolLiteral {
+    var toMarco: MarcoBoolLiteral {
         return MarcoBoolLiteralNode(value: self)
     }
 }
 
 public extension NSColor {
     /** returns a Marco color integer value. */
-    public var toMarco: MarcoIntLiteral {
+    var toMarco: MarcoIntLiteral {
         return MarcoColorLiteralNode(text: hexValue)
     }
     

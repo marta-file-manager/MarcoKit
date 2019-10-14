@@ -40,39 +40,39 @@ public protocol MarcoVisitor {
 }
 
 public extension MarcoVisitor {
-    public func visitInt(value: MarcoIntLiteral, data: Data) -> ReturnType {
+    func visitInt(value: MarcoIntLiteral, data: Data) -> ReturnType {
         return visitNumber(value: value, data: data)
     }
 
-    public func visitDouble(value: MarcoDoubleLiteral, data: Data) -> ReturnType {
+    func visitDouble(value: MarcoDoubleLiteral, data: Data) -> ReturnType {
         return visitNumber(value: value, data: data)
     }
 
-    public func visitDocument(value: MarcoDocument, data: Data) -> ReturnType {
+    func visitDocument(value: MarcoDocument, data: Data) -> ReturnType {
         return visitValue(value: value, data: data)
     }
 
-    public func visitObject(value: MarcoObject, data: Data) -> ReturnType {
+    func visitObject(value: MarcoObject, data: Data) -> ReturnType {
         return visitValue(value: value, data: data)
     }
 
-    public func visitArray(value: MarcoArray, data: Data) -> ReturnType {
+    func visitArray(value: MarcoArray, data: Data) -> ReturnType {
         return visitValue(value: value, data: data)
     }
 
-    public func visitNull(value: MarcoNullLiteral, data: Data) -> ReturnType {
+    func visitNull(value: MarcoNullLiteral, data: Data) -> ReturnType {
         return visitValue(value: value, data: data)
     }
 
-    public func visitBool(value: MarcoBoolLiteral, data: Data) -> ReturnType {
+    func visitBool(value: MarcoBoolLiteral, data: Data) -> ReturnType {
         return visitValue(value: value, data: data)
     }
 
-    public func visitString(value: MarcoStringLiteral, data: Data) -> ReturnType {
+    func visitString(value: MarcoStringLiteral, data: Data) -> ReturnType {
         return visitValue(value: value, data: data)
     }
 
-    public func visitNumber(value: MarcoNumberLiteral, data: Data) -> ReturnType {
+    func visitNumber(value: MarcoNumberLiteral, data: Data) -> ReturnType {
         return visitValue(value: value, data: data)
     }
 }

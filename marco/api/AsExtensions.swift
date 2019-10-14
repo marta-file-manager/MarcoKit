@@ -2,25 +2,25 @@ import Cocoa
 
 public extension MarcoValue {
     /** Safely casts this value to an object value. */
-    public var asObject: MarcoObject? {
+    var asObject: MarcoObject? {
         guard let object = self as? MarcoObject else { return nil }
         return object
     }
 
     /** Safely casts this value to an array value. */
-    public var asArray: MarcoArray? {
+    var asArray: MarcoArray? {
         guard let array = self as? MarcoArray else { return nil }
         return array
     }
 
     /** Safely casts this value to a string value. */
-    public var asStringLiteral: MarcoStringLiteral? {
+    var asStringLiteral: MarcoStringLiteral? {
         guard let literal = self as? MarcoStringLiteral else { return nil }
         return literal
     }
 
     /** Safely casts this value to an string value, and returns the backing `String` if the cast was successful. */
-    public var asString: String? {
+    var asString: String? {
         guard let literal = self as? MarcoStringLiteral else { return nil }
         return literal.value
     }
@@ -28,30 +28,30 @@ public extension MarcoValue {
     /** Safely casts this value to an string value, and returns the backing `String` if the cast was successful.
         Returns an empty String otherwise.
      */
-    public var asStringOrEmpty: String {
+    var asStringOrEmpty: String {
         return asString ?? ""
     }
 
     /** Safely casts this value to a number value. */
-    public var asNumberLiteral: MarcoNumberLiteral? {
+    var asNumberLiteral: MarcoNumberLiteral? {
         guard let literal = self as? MarcoNumberLiteral else { return nil }
         return literal
     }
 
     /** Safely casts this value to a integer value. */
-    public var asIntLiteral: MarcoIntLiteral? {
+    var asIntLiteral: MarcoIntLiteral? {
         guard let literal = self as? MarcoIntLiteral else { return nil }
         return literal
     }
 
     /** Safely casts this value to a double value. */
-    public var asDoubleLiteral: MarcoDoubleLiteral? {
+    var asDoubleLiteral: MarcoDoubleLiteral? {
         guard let literal = self as? MarcoDoubleLiteral else { return nil }
         return literal
     }
 
     /** Safely casts this value to an integer value, and returns the backing `Int` if the cast was successful. */
-    public var asInt: Int? {
+    var asInt: Int? {
         guard let literal = self as? MarcoIntLiteral else { return nil }
         return literal.intValue
     }
@@ -59,12 +59,12 @@ public extension MarcoValue {
     /** Safely casts this value to an integer value, and returns the backing `Int` if the cast was successful.
         Returns `0` otherwise.
      */
-    public var asIntOrZero: Int {
+    var asIntOrZero: Int {
         return asInt ?? 0
     }
 
     /** Safely casts this value to a double value, and returns the backing `Double` if the cast was successful. */
-    public var asDouble: Double? {
+    var asDouble: Double? {
         guard let literal = self as? MarcoDoubleLiteral else { return nil }
         return literal.doubleValue
     }
@@ -72,18 +72,18 @@ public extension MarcoValue {
     /** Safely casts this value to a double value, and returns the backing `Double` if the cast was successful.
         Returns `0.0` otherwise.
      */
-    public var asDoubleOrZero: Double {
+    var asDoubleOrZero: Double {
         return asDouble ?? 0
     }
 
     /** Safely casts this value to a boolean value. */
-    public var asBoolLiteral: MarcoBoolLiteral? {
+    var asBoolLiteral: MarcoBoolLiteral? {
         guard let literal = self as? MarcoBoolLiteral else { return nil }
         return literal
     }
 
     /** Safely casts this value to a boolean value, and returns the backing `Bool` if the cast was successful. */
-    public var asBool: Bool? {
+    var asBool: Bool? {
         guard let literal = self as? MarcoBoolLiteral else { return nil }
         return literal.value
     }
@@ -91,36 +91,36 @@ public extension MarcoValue {
     /** Safely casts this value to a boolean value, and returns the backing `Bool` if the cast was successful.
         Returns `false` otherwise.
      */
-    public var asBoolOrFalse: Bool {
+    var asBoolOrFalse: Bool {
         return asBool ?? false
     }
 
     /** Safely casts this value to a boolean value, and returns the backing `Bool` if the cast was successful.
         Returns `true` otherwise.
      */
-    public var asBoolOrTrue: Bool {
+    var asBoolOrTrue: Bool {
         return asBool ?? true
     }
 
     /** Safely casts this value to a null value. */
-    public var asNullLiteral: MarcoNullLiteral? {
+    var asNullLiteral: MarcoNullLiteral? {
         guard let literal = self as? MarcoNullLiteral else { return nil }
         return literal
     }
 
     /** True if this value is a null value. */
-    public var isNull: Bool {
+    var isNull: Bool {
         return self is MarcoNullLiteral
     }
     
     /** Safely casts this value to a color integer value, and converts it into an `NSColor`. */
-    public func asColor(useAlpha: Bool = false) -> NSColor? {
+    func asColor(useAlpha: Bool = false) -> NSColor? {
         guard let intValue = asInt else { return nil }
         return getColor(intValue, useAlpha: useAlpha)
     }
     
     /** Safely casts this value to a color integer value, and converts it into an `NSColor`. */
-    public var asColor: NSColor? {
+    var asColor: NSColor? {
         if let colorNode = self as? MarcoColorLiteralNode {
             return getColor(colorNode.intValue, useAlpha: colorNode.useAlpha)
         }

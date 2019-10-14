@@ -10,7 +10,7 @@ public protocol MarcoNumberLiteral : MarcoValue {
 }
 
 public extension MarcoNumberLiteral {
-    public func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {
+    func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {
         return visitor.visitNumber(value: self, data: data)
     }
 }

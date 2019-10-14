@@ -125,7 +125,7 @@ public extension Marco {
         This does not change the original value.
         All insignificant whitespaces will be removed.
     */
-    public static func minify(_ value: MarcoValue) -> MarcoValue {
+    static func minify(_ value: MarcoValue) -> MarcoValue {
         return value.accept(MinifyingVisitor.instance)
     }
 
@@ -135,24 +135,24 @@ public extension Marco {
         This does not change the original value.
         All existing formatting will be removed.
     */
-    public static func prettify(_ value: MarcoValue, reorderKeys: Bool = true) -> MarcoValue {
+    static func prettify(_ value: MarcoValue, reorderKeys: Bool = true) -> MarcoValue {
         return value.accept(
             PrettifyingVisitor(forceNewLine: false, isRecursive: true, reorderKeys: reorderKeys),
             data: 0)
     }
 
     /** Returns a JSON string for the given Marco object. */
-    public static func toJsonString(_ value: MarcoValue) -> String {
+    static func toJsonString(_ value: MarcoValue) -> String {
         return value.accept(ToJsonVisitor.instance)
     }
 
     /** Returns a Marco object got from the parsed JSON representation. */
-    public static func fromJson(object json: Any) -> MarcoDocument {
+    static func fromJson(object json: Any) -> MarcoDocument {
         return JsonToMarcoConverter.instance.convert(json: json)
     }
 
     /** Returns a Marco configuration object from the parsed JSON representation. */
-    public static func configFromJson(object json: [String: Any]) -> MarcoDocument {
+    static func configFromJson(object json: [String: Any]) -> MarcoDocument {
         return JsonToMarcoConverter.instance.convertConfig(json: json)
     }
 }

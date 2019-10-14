@@ -21,17 +21,17 @@ public protocol MarcoObject : MarcoValue {
 
 public extension MarcoObject {
     /** True if the object is empty. */
-    public var isEmpty: Bool {
+    var isEmpty: Bool {
         return count == 0
     }
 
     /** True if the object is not empty. */
-    public var isNotEmpty: Bool {
+    var isNotEmpty: Bool {
         return count > 0
     }
 
     /** Returns all elements. The new array instance will be created. */
-    public var elements: [String: MarcoValue] {
+    var elements: [String: MarcoValue] {
         var result = [String: MarcoValue]()
         result.reserveCapacity(keys.count)
 
@@ -43,14 +43,14 @@ public extension MarcoObject {
     }
 
     /** Iterates over all elements. */
-    public func forEach(_ body: (String, MarcoValue) throws -> ()) rethrows {
+    func forEach(_ body: (String, MarcoValue) throws -> ()) rethrows {
         for key in keys {
             try body(key, self[key]!)
         }
     }
 
     /** Returns `true` if `predicate` returns `true` for all elements. */
-    public func all(predicate: (String, MarcoValue) throws -> Bool) rethrows -> Bool {
+    func all(predicate: (String, MarcoValue) throws -> Bool) rethrows -> Bool {
         for key in keys {
             if !(try predicate(key, self[key]!)) {
                 return false
@@ -61,12 +61,12 @@ public extension MarcoObject {
     }
 
     /** Returns `true` if `predicate` returns `false` for all elements. */
-    public func none(predicate: (String, MarcoValue) throws -> Bool) rethrows -> Bool {
+    func none(predicate: (String, MarcoValue) throws -> Bool) rethrows -> Bool {
         return try !any(predicate: predicate)
     }
 
     /** Returns `true` if `predicate` returns `true` at least for one element. */
-    public func any(predicate: (String, MarcoValue) throws -> Bool) rethrows -> Bool {
+    func any(predicate: (String, MarcoValue) throws -> Bool) rethrows -> Bool {
         for key in keys {
             if try predicate(key, self[key]!) {
                 return true
@@ -77,12 +77,12 @@ public extension MarcoObject {
     }
     
     /** Returns an element with a specified key sequence. */
-    public subscript(keys: String...) -> MarcoValue? {
+    subscript(keys: String...) -> MarcoValue? {
         return self[keys]
     }
     
     /** Returns an element with a specified key sequence. */
-    public subscript(keys: [String]) -> MarcoValue? {
+    subscript(keys: [String]) -> MarcoValue? {
         var current: MarcoValue = self
         for key in keys {
             guard let next = (current as? MarcoObject)?[key] else { return nil }
@@ -93,11 +93,11 @@ public extension MarcoObject {
     }
     
     /** Returns a `Sequence` representation of the object. */
-    public func sequence() -> MarcoObjectSequence {
+    func sequence() -> MarcoObjectSequence {
         return MarcoObjectSequence(self)
     }
 
-    public func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {
+    func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {
         return visitor.visitObject(value: self, data: data)
     }
 }

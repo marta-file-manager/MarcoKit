@@ -17,22 +17,22 @@ public protocol MarcoArray : MarcoValue {
 
 public extension MarcoArray {
     /** True if the array is empty. */
-    public var isEmpty: Bool {
+    var isEmpty: Bool {
         return count == 0
     }
 
     /** True if the array is not empty. */
-    public var isNotEmpty: Bool {
+    var isNotEmpty: Bool {
         return count > 0
     }
 
     /** Appends an element to the array. */
-    public func add(_ value: MarcoValue) {
+    func add(_ value: MarcoValue) {
         insert(value, at: count)
     }
 
     /** Returns all elements. The new array instance will be created. */
-    public var elements: [MarcoValue] {
+    var elements: [MarcoValue] {
         let count = self.count
 
         var result = [MarcoValue]()
@@ -46,14 +46,14 @@ public extension MarcoArray {
     }
 
     /** Iterates over all elements. */
-    public func forEach(_ body: (MarcoValue) throws -> ()) rethrows {
+    func forEach(_ body: (MarcoValue) throws -> ()) rethrows {
         for i in 0..<self.count {
             try body(self[i])
         }
     }
 
     /** Returns `true` if `predicate` returns `true` for all elements. */
-    public func all(predicate: (MarcoValue) throws -> Bool) rethrows -> Bool {
+    func all(predicate: (MarcoValue) throws -> Bool) rethrows -> Bool {
         for i in 0..<self.count {
             if !(try predicate(self[i])) {
                 return false
@@ -64,12 +64,12 @@ public extension MarcoArray {
     }
 
     /** Returns `true` if `predicate` returns `false` for all elements. */
-    public func none(predicate: (MarcoValue) throws -> Bool) rethrows -> Bool {
+    func none(predicate: (MarcoValue) throws -> Bool) rethrows -> Bool {
         return try !any(predicate: predicate)
     }
 
     /** Returns `true` if `predicate` returns `true` at least for one element. */
-    public func any(predicate: (MarcoValue) throws -> Bool) rethrows -> Bool {
+    func any(predicate: (MarcoValue) throws -> Bool) rethrows -> Bool {
         for i in 0..<self.count {
             if try predicate(self[i]) {
                 return true
@@ -80,7 +80,7 @@ public extension MarcoArray {
     }
 
     /** Returns the first value for which `predicate` returns `true`. */
-    public func first(where predicate: (MarcoValue) throws -> Bool) rethrows -> MarcoValue? {
+    func first(where predicate: (MarcoValue) throws -> Bool) rethrows -> MarcoValue? {
         for i in 0..<self.count {
             let item = self[i]
             if try predicate(item) {
@@ -92,7 +92,7 @@ public extension MarcoArray {
     }
 
     /** Returns the first value for which `predicate` returns `true`. */
-    public func firstIndex(where predicate: (MarcoValue) throws -> Bool) rethrows -> Int? {
+    func firstIndex(where predicate: (MarcoValue) throws -> Bool) rethrows -> Int? {
         for i in 0..<self.count {
             let item = self[i]
             if (try predicate(item)) {
@@ -104,7 +104,7 @@ public extension MarcoArray {
     }
 
     /** Removes an element with a specified `value`. */
-    public func remove(_ value: MarcoValue) -> Bool {
+    func remove(_ value: MarcoValue) -> Bool {
         for i in 0..<count {
             if (self[i] === value) {
                 remove(at: i)
@@ -116,11 +116,11 @@ public extension MarcoArray {
     }
     
     /** Returns a `Sequence` representation of the array. */
-    public func sequence() -> MarcoArraySequence {
+    func sequence() -> MarcoArraySequence {
         return MarcoArraySequence(self)
     }
 
-    public func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {
+    func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {
         return visitor.visitArray(value: self, data: data)
     }
 }

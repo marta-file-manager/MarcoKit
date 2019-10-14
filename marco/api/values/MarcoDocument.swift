@@ -12,11 +12,11 @@ public protocol MarcoDocument: MarcoValue {
 }
 
 public extension MarcoDocument {
-    public func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {
+    func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {
         return visitor.visitDocument(value: self, data: data)
     }
 
-    public var description: String {
+    var description: String {
         return value.description
     }
 }

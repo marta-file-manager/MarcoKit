@@ -16,16 +16,16 @@ public protocol MarcoValue : class, CustomStringConvertible {
 }
 
 public extension MarcoValue {
-    public var description: String {
+    var description: String {
         return text
     }
 
-    public func accept<V, R>(_ visitor: V) -> R where V : MarcoVisitor, V.ReturnType == R, V.Data == () {
+    func accept<V, R>(_ visitor: V) -> R where V : MarcoVisitor, V.ReturnType == R, V.Data == () {
         return accept(visitor, data: ())
     }
     
     /** Returns an underlying Marco document, or `nil` if the current value is not currently attached to a document. */
-    public var document: MarcoDocument? {
+    var document: MarcoDocument? {
         if let doc = self as? MarcoDocument {
             return doc
         }
