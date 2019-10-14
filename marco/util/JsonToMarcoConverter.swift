@@ -32,6 +32,8 @@ internal class JsonToMarcoConverter {
                         return MarcoDoubleLiteralNode(value: json.doubleValue)
                     case .charType:
                         return MarcoStringLiteralNode(value: json.stringValue)
+                @unknown default:
+                    preconditionFailure("Unexpected value type")
                 }
             } else {
                 preconditionFailure("Unknown element type: \(json)")
