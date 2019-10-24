@@ -12,7 +12,7 @@ func parse(url: URL, content: String) -> MarcoDocument {
 }
 
 func tryParse(url: URL, content: String) throws -> MarcoDocument {
-    var options: Marco.Options = []
+    var options: Marco.Options = [.showContextInErrors]
 
     if (url.pathExtension == "marcoConfig") {
         options.insert(.config)
