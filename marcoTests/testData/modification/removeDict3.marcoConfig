@@ -15,7 +15,8 @@ bar {}
 }
 
 --after
-bar {} foo {
+bar {}
+foo {
     c 3
     d 4
 }

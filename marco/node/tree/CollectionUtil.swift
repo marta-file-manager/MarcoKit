@@ -123,7 +123,7 @@ internal extension MarcoCollectionNode {
         let rawIndexToInsert = rawIndexBeforeElement + 1
         let whitespace = whitespaceBeforeChild(index: rawIndexBeforeElement)
 
-        if (whitespace.contains("\n")) {
+        if (whitespace.contains("\n") || itemCount == 1) {
             let indent = whitespace.textAfterNewLine()
             valueNode.applyIndent(indent: indent)
             insertNodes(WSnl("\n" + indent), valueNode, at: rawIndexToInsert)

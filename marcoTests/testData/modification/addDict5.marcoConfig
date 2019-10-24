@@ -1,0 +1,9 @@
+--before
+foo "John"
+
+--add bar
+"Mary"
+
+--after
+foo "John"
+bar "Mary"
