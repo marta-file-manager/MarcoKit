@@ -298,6 +298,10 @@ internal class MarcoParser {
                 text.append(try state.advance())
                 parsedCount += 1
             }
+
+            guard parsedCount > 0 else {
+                throw state.unexpectedCharacter(title: "Hexadecimal literal expected")
+            }
             
             return parsedCount
         }

@@ -1,0 +1,10 @@
+--before
+{
+    foo 0x
+}
+
+--after
+12: Hexadecimal literal expected '\n'
+
+{
+    foo 0x💥
