@@ -35,10 +35,10 @@
 		1D266EE87CCAA09A8489C700 /* JsonToMarcoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2661F8BD0E7D1CF126F5EF /* JsonToMarcoConverter.swift */; };
 		1D266F8227E00565468EE351 /* marcoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D266712225D2BF1C561ABF5 /* marcoUtils.swift */; };
 		1D266FB16B54131CEB503AFB /* MarcoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26643F72213D27E5B5B416 /* MarcoArray.swift */; };
-		2C868197217E86B50030C290 /* testData in Resources */ = {isa = PBXBuildFile; fileRef = 2C868195217E86A80030C290 /* testData */; };
+		2C868197217E86B50030C290 /* TestData in Resources */ = {isa = PBXBuildFile; fileRef = 2C868195217E86A80030C290 /* TestData */; };
 		2C8C2F97217E71B500D69A39 /* MarcoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8C2F8D217E71B500D69A39 /* MarcoKit.framework */; };
 		2C8C2F9C217E71B500D69A39 /* DirectApiAccessTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C2F9B217E71B500D69A39 /* DirectApiAccessTest.swift */; };
-		2C8C2F9E217E71B500D69A39 /* marco.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8C2F90217E71B500D69A39 /* marco.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C8C2F9E217E71B500D69A39 /* MarcoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8C2F90217E71B500D69A39 /* MarcoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C8C2FB7217E72A100D69A39 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C2FAF217E72A000D69A39 /* Conversions.swift */; };
 		2C8C2FB8217E72A100D69A39 /* MarcoVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C2FB0217E72A000D69A39 /* MarcoVisitor.swift */; };
 		2C8C2FB9217E72A100D69A39 /* AsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C2FB1217E72A000D69A39 /* AsExtensions.swift */; };
@@ -75,8 +75,8 @@
 		2C9E6F9D21CF0950001BD19B /* ToJsonVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2669073EBB794F0DDCB15A /* ToJsonVisitor.swift */; };
 		2C9E6F9E21CF0950001BD19B /* JsonToMarcoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2661F8BD0E7D1CF126F5EF /* JsonToMarcoConverter.swift */; };
 		2CE4FF0921CF008800C2C6A6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4FF0821CF008800C2C6A6 /* main.swift */; };
-		2CE4FF1021CF00EB00C2C6A6 /* argsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4FF0F21CF00EB00C2C6A6 /* argsParser.swift */; };
-		2CE4FF1221CF04C400C2C6A6 /* misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4FF1121CF04C400C2C6A6 /* misc.swift */; };
+		2CE4FF1021CF00EB00C2C6A6 /* Args.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4FF0F21CF00EB00C2C6A6 /* Args.swift */; };
+		2CE4FF1221CF04C400C2C6A6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4FF1121CF04C400C2C6A6 /* Utilities.swift */; };
 		2CE4FF1521CF084300C2C6A6 /* Marco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C2FB6217E72A000D69A39 /* Marco.swift */; };
 		2CE4FF1621CF084300C2C6A6 /* MarcoVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C2FB0217E72A000D69A39 /* MarcoVisitor.swift */; };
 		2CE4FF1721CF084300C2C6A6 /* AsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C2FB1217E72A000D69A39 /* AsExtensions.swift */; };
@@ -156,11 +156,11 @@
 		1D266D24CC6D84EE9C13B2C9 /* PrettifyingVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrettifyingVisitor.swift; sourceTree = "<group>"; };
 		1D266EB1BA4D65F6647EE339 /* MarcoDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoDocument.swift; sourceTree = "<group>"; };
 		1D266EE31AE79A9BB94ABA3A /* MinifyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinifyTest.swift; sourceTree = "<group>"; };
-		2C868195217E86A80030C290 /* testData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = testData; sourceTree = "<group>"; };
+		2C868195217E86A80030C290 /* TestData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestData; sourceTree = "<group>"; };
 		2C8C2F8D217E71B500D69A39 /* MarcoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarcoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C8C2F90217E71B500D69A39 /* marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = marco.h; sourceTree = "<group>"; };
+		2C8C2F90217E71B500D69A39 /* MarcoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarcoKit.h; sourceTree = "<group>"; };
 		2C8C2F91217E71B500D69A39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C8C2F96217E71B500D69A39 /* MarcoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarcoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C8C2F96217E71B500D69A39 /* MarcoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarcoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8C2F9B217E71B500D69A39 /* DirectApiAccessTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectApiAccessTest.swift; sourceTree = "<group>"; };
 		2C8C2F9D217E71B500D69A39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C8C2FAF217E72A000D69A39 /* Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
@@ -186,10 +186,10 @@
 		2C8C2FDD217E72C900D69A39 /* MinifyingVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinifyingVisitor.swift; sourceTree = "<group>"; };
 		2C8C2FDE217E72C900D69A39 /* MarcoNodeUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoNodeUtil.swift; sourceTree = "<group>"; };
 		2C8C2FE2217E734900D69A39 /* MarcoNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcoNode.swift; sourceTree = "<group>"; };
-		2CE4FF0621CF008800C2C6A6 /* marco */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = marco; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CE4FF0621CF008800C2C6A6 /* MarcoCli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MarcoCli; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE4FF0821CF008800C2C6A6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		2CE4FF0F21CF00EB00C2C6A6 /* argsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = argsParser.swift; sourceTree = "<group>"; };
-		2CE4FF1121CF04C400C2C6A6 /* misc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = misc.swift; sourceTree = "<group>"; };
+		2CE4FF0F21CF00EB00C2C6A6 /* Args.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Args.swift; sourceTree = "<group>"; };
+		2CE4FF1121CF04C400C2C6A6 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,17 +218,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D266DE7A490B4A83C9C73C9 /* util */ = {
+		1D266DE7A490B4A83C9C73C9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				1D266CC76B65D105D440F0C4 /* testUtils.swift */,
 				1D2667158F0954E1EE7F7108 /* XCTestCaseWithTestData.swift */,
+				1D266CC76B65D105D440F0C4 /* testUtils.swift */,
 				1D266712225D2BF1C561ABF5 /* marcoUtils.swift */,
 			);
-			path = util;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
-		1D266F8F0D877E76BEA77532 /* values */ = {
+		1D266F8F0D877E76BEA77532 /* Values */ = {
 			isa = PBXGroup;
 			children = (
 				1D2667370C638041F44D0F89 /* MarcoValue.swift */,
@@ -242,49 +242,23 @@
 				1D266249E6EAC657C07ED089 /* MarcoDoubleLiteral.swift */,
 				1D266EB1BA4D65F6647EE339 /* MarcoDocument.swift */,
 			);
-			path = values;
+			path = Values;
 			sourceTree = "<group>";
 		};
-		2C8C2F83217E71B500D69A39 = {
+		2C559557254684E300873ED0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2C8C2F8F217E71B500D69A39 /* marco */,
-				2C8C2F9A217E71B500D69A39 /* marcoTests */,
-				2CE4FF0721CF008800C2C6A6 /* marco-cli */,
-				2C8C2F8E217E71B500D69A39 /* Products */,
-				2CE4FF0D21CF009200C2C6A6 /* Frameworks */,
+				2CE4FF0821CF008800C2C6A6 /* main.swift */,
+				2CE4FF0F21CF00EB00C2C6A6 /* Args.swift */,
+				2CE4FF1121CF04C400C2C6A6 /* Utilities.swift */,
 			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		2C8C2F8E217E71B500D69A39 /* Products */ = {
+		2C5595612546853700873ED0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2C8C2F8D217E71B500D69A39 /* MarcoKit.framework */,
-				2C8C2F96217E71B500D69A39 /* MarcoTests.xctest */,
-				2CE4FF0621CF008800C2C6A6 /* marco */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		2C8C2F8F217E71B500D69A39 /* marco */ = {
-			isa = PBXGroup;
-			children = (
-				2C8C2FA8217E71F500D69A39 /* api */,
-				2C8C2FA9217E71FA00D69A39 /* node */,
-				2C8C2FAA217E71FF00D69A39 /* parser */,
-				2C8C2FAB217E720300D69A39 /* util */,
-				2C8C2F90217E71B500D69A39 /* marco.h */,
-				2C8C2F91217E71B500D69A39 /* Info.plist */,
-			);
-			path = marco;
-			sourceTree = "<group>";
-		};
-		2C8C2F9A217E71B500D69A39 /* marcoTests */ = {
-			isa = PBXGroup;
-			children = (
-				2C868195217E86A80030C290 /* testData */,
-				2C8C2F9D217E71B500D69A39 /* Info.plist */,
-				1D266DE7A490B4A83C9C73C9 /* util */,
+				1D266DE7A490B4A83C9C73C9 /* Utilities */,
 				2C8C2F9B217E71B500D69A39 /* DirectApiAccessTest.swift */,
 				1D2663EFF025AD9A5252AA2A /* ParseTest.swift */,
 				1D266B4F0574CD8C9B4CB0CC /* ModificationTest.swift */,
@@ -294,43 +268,87 @@
 				1D266B541EC9D4545B52C1AA /* JsonConversionTest.swift */,
 				1D266758F2C7ED7585EFE8C1 /* FromJsonConversionTest.swift */,
 			);
-			path = marcoTests;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		2C8C2FA8217E71F500D69A39 /* api */ = {
+		2C8C2F83217E71B500D69A39 = {
 			isa = PBXGroup;
 			children = (
+				2C8C2F8F217E71B500D69A39 /* MarcoKit */,
+				2C8C2F9A217E71B500D69A39 /* MarcoKitTests */,
+				2CE4FF0721CF008800C2C6A6 /* MarcoCli */,
+				2C8C2F8E217E71B500D69A39 /* Products */,
+				2CE4FF0D21CF009200C2C6A6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2C8C2F8E217E71B500D69A39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C8C2F8D217E71B500D69A39 /* MarcoKit.framework */,
+				2C8C2F96217E71B500D69A39 /* MarcoKitTests.xctest */,
+				2CE4FF0621CF008800C2C6A6 /* MarcoCli */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C8C2F8F217E71B500D69A39 /* MarcoKit */ = {
+			isa = PBXGroup;
+			children = (
+				2C8C2FA8217E71F500D69A39 /* API */,
+				2C8C2FA9217E71FA00D69A39 /* Node */,
+				2C8C2FAA217E71FF00D69A39 /* Parser */,
+				2C8C2FAB217E720300D69A39 /* Utilities */,
+				2C8C2F90217E71B500D69A39 /* MarcoKit.h */,
+				2C8C2F91217E71B500D69A39 /* Info.plist */,
+			);
+			path = MarcoKit;
+			sourceTree = "<group>";
+		};
+		2C8C2F9A217E71B500D69A39 /* MarcoKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C5595612546853700873ED0 /* Sources */,
+				2C868195217E86A80030C290 /* TestData */,
+				2C8C2F9D217E71B500D69A39 /* Info.plist */,
+			);
+			path = MarcoKitTests;
+			sourceTree = "<group>";
+		};
+		2C8C2FA8217E71F500D69A39 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				1D266F8F0D877E76BEA77532 /* Values */,
 				2C8C2FB6217E72A000D69A39 /* Marco.swift */,
 				2C8C2FB0217E72A000D69A39 /* MarcoVisitor.swift */,
 				2C8C2FB1217E72A000D69A39 /* AsExtensions.swift */,
 				2C8C2FAF217E72A000D69A39 /* Conversions.swift */,
 				2C8C2FB3217E72A000D69A39 /* NumberExtensions.swift */,
-				1D266F8F0D877E76BEA77532 /* values */,
 				1D266761B5842A63AA7BD576 /* MarcoParsingError.swift */,
 			);
-			path = api;
+			path = API;
 			sourceTree = "<group>";
 		};
-		2C8C2FA9217E71FA00D69A39 /* node */ = {
+		2C8C2FA9217E71FA00D69A39 /* Node */ = {
 			isa = PBXGroup;
 			children = (
 				2C8C2FE2217E734900D69A39 /* MarcoNode.swift */,
 				2C8C2FAC217E722000D69A39 /* literal */,
 				2C8C2FAD217E722500D69A39 /* tree */,
 			);
-			path = node;
+			path = Node;
 			sourceTree = "<group>";
 		};
-		2C8C2FAA217E71FF00D69A39 /* parser */ = {
+		2C8C2FAA217E71FF00D69A39 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
 				2C8C2FD9217E72C300D69A39 /* MarcoParser.swift */,
 				2C8C2FDA217E72C300D69A39 /* MarcoParserState.swift */,
 			);
-			path = parser;
+			path = Parser;
 			sourceTree = "<group>";
 		};
-		2C8C2FAB217E720300D69A39 /* util */ = {
+		2C8C2FAB217E720300D69A39 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				2C8C2FDE217E72C900D69A39 /* MarcoNodeUtil.swift */,
@@ -340,7 +358,7 @@
 				1D2661F8BD0E7D1CF126F5EF /* JsonToMarcoConverter.swift */,
 				1D266568F68DC3AEED92BC65 /* MutatingPrettifyingVisitor.swift */,
 			);
-			path = util;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		2C8C2FAC217E722000D69A39 /* literal */ = {
@@ -380,14 +398,12 @@
 			path = number;
 			sourceTree = "<group>";
 		};
-		2CE4FF0721CF008800C2C6A6 /* marco-cli */ = {
+		2CE4FF0721CF008800C2C6A6 /* MarcoCli */ = {
 			isa = PBXGroup;
 			children = (
-				2CE4FF0821CF008800C2C6A6 /* main.swift */,
-				2CE4FF0F21CF00EB00C2C6A6 /* argsParser.swift */,
-				2CE4FF1121CF04C400C2C6A6 /* misc.swift */,
+				2C559557254684E300873ED0 /* Sources */,
 			);
-			path = "marco-cli";
+			path = MarcoCli;
 			sourceTree = "<group>";
 		};
 		2CE4FF0D21CF009200C2C6A6 /* Frameworks */ = {
@@ -404,7 +420,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C8C2F9E217E71B500D69A39 /* marco.h in Headers */,
+				2C8C2F9E217E71B500D69A39 /* MarcoKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,9 +445,9 @@
 			productReference = 2C8C2F8D217E71B500D69A39 /* MarcoKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		2C8C2F95217E71B500D69A39 /* MarcoTests */ = {
+		2C8C2F95217E71B500D69A39 /* MarcoKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C8C2FA4217E71B500D69A39 /* Build configuration list for PBXNativeTarget "MarcoTests" */;
+			buildConfigurationList = 2C8C2FA4217E71B500D69A39 /* Build configuration list for PBXNativeTarget "MarcoKitTests" */;
 			buildPhases = (
 				2C8C2F92217E71B500D69A39 /* Sources */,
 				2C8C2F93217E71B500D69A39 /* Frameworks */,
@@ -442,9 +458,9 @@
 			dependencies = (
 				2C8C2F99217E71B500D69A39 /* PBXTargetDependency */,
 			);
-			name = MarcoTests;
+			name = MarcoKitTests;
 			productName = marcoTests;
-			productReference = 2C8C2F96217E71B500D69A39 /* MarcoTests.xctest */;
+			productReference = 2C8C2F96217E71B500D69A39 /* MarcoKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		2CE4FF0521CF008800C2C6A6 /* MarcoCli */ = {
@@ -461,7 +477,7 @@
 			);
 			name = MarcoCli;
 			productName = "marco-cli";
-			productReference = 2CE4FF0621CF008800C2C6A6 /* marco */;
+			productReference = 2CE4FF0621CF008800C2C6A6 /* MarcoCli */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -471,7 +487,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "Yan Zhulanow";
 				TargetAttributes = {
 					2C8C2F8C217E71B500D69A39 = {
@@ -487,7 +503,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2C8C2F87217E71B500D69A39 /* Build configuration list for PBXProject "marco" */;
+			buildConfigurationList = 2C8C2F87217E71B500D69A39 /* Build configuration list for PBXProject "MarcoKit" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -501,7 +517,7 @@
 			projectRoot = "";
 			targets = (
 				2C8C2F8C217E71B500D69A39 /* MarcoKit */,
-				2C8C2F95217E71B500D69A39 /* MarcoTests */,
+				2C8C2F95217E71B500D69A39 /* MarcoKitTests */,
 				2CE4FF0521CF008800C2C6A6 /* MarcoCli */,
 			);
 		};
@@ -519,7 +535,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C868197217E86B50030C290 /* testData in Resources */,
+				2C868197217E86B50030C290 /* TestData in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +636,7 @@
 				2CE4FF2321CF084B00C2C6A6 /* MarcoDocument.swift in Sources */,
 				2C9E6F9321CF0948001BD19B /* MarcoArrayNode.swift in Sources */,
 				2CE4FF1B21CF084B00C2C6A6 /* MarcoObject.swift in Sources */,
-				2CE4FF1221CF04C400C2C6A6 /* misc.swift in Sources */,
+				2CE4FF1221CF04C400C2C6A6 /* Utilities.swift in Sources */,
 				2C9E6F9C21CF0950001BD19B /* PrettifyingVisitor.swift in Sources */,
 				2CE4FF2B21CF087000C2C6A6 /* MarcoIdentifierNode.swift in Sources */,
 				2CE4FF2121CF084B00C2C6A6 /* MarcoIntLiteral.swift in Sources */,
@@ -632,7 +648,7 @@
 				2CE4FF1F21CF084B00C2C6A6 /* MarcoNullLiteral.swift in Sources */,
 				2CE4FF2021CF084B00C2C6A6 /* MarcoNumberLiteral.swift in Sources */,
 				2CE4FF0921CF008800C2C6A6 /* main.swift in Sources */,
-				2CE4FF1021CF00EB00C2C6A6 /* argsParser.swift in Sources */,
+				2CE4FF1021CF00EB00C2C6A6 /* Args.swift in Sources */,
 				2C9E6F9921CF094D001BD19B /* MarcoParserState.swift in Sources */,
 				2C9E6F9521CF0948001BD19B /* MarcoObjectNode.swift in Sources */,
 				2C9E6F9A21CF0950001BD19B /* MarcoNodeUtil.swift in Sources */,
@@ -678,6 +694,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -704,14 +721,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -743,6 +759,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -763,13 +780,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -788,7 +804,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = marco/Info.plist;
+				INFOPLIST_FILE = MarcoKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -796,8 +812,8 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.yanex.marco;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
+				PRODUCT_NAME = MarcoKit;
+				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -816,7 +832,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = marco/Info.plist;
+				INFOPLIST_FILE = MarcoKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -824,8 +840,8 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.yanex.marco;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
+				PRODUCT_NAME = MarcoKit;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -843,7 +859,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.yanex.marcoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.yanex.marco.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -862,7 +878,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.yanex.marcoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.yanex.marco.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -874,8 +890,8 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PYJ26U4KNX;
-				PRODUCT_NAME = marco;
-				SWIFT_VERSION = 4.2;
+				PRODUCT_NAME = MarcoCli;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -885,15 +901,15 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PYJ26U4KNX;
-				PRODUCT_NAME = marco;
-				SWIFT_VERSION = 4.2;
+				PRODUCT_NAME = MarcoCli;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2C8C2F87217E71B500D69A39 /* Build configuration list for PBXProject "marco" */ = {
+		2C8C2F87217E71B500D69A39 /* Build configuration list for PBXProject "MarcoKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C8C2F9F217E71B500D69A39 /* Debug */,
@@ -911,7 +927,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C8C2FA4217E71B500D69A39 /* Build configuration list for PBXNativeTarget "MarcoTests" */ = {
+		2C8C2FA4217E71B500D69A39 /* Build configuration list for PBXNativeTarget "MarcoKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C8C2FA5217E71B500D69A39 /* Debug */,

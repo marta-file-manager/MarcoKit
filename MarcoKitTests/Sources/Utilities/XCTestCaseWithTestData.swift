@@ -5,14 +5,14 @@ class XCTestCaseWithTestData : XCTestCase {
     func doTest(url: URL, testData: TestData) {}
 
     func test(groupName: String) {
-        let dirUrl = Bundle(for: ParseTest.self).resourceURL!.appendingPathComponent("testData/" + groupName)
+        let dirUrl = Bundle(for: ParseTest.self).resourceURL!.appendingPathComponent("TestData/" + groupName)
         for obj in FileManager.default.enumerator(at: dirUrl, includingPropertiesForKeys: nil)! {
             runSingleFile(url: obj as! URL)
         }
     }
 
     func test(groupName: String, testName: String) {
-        let dirUrl = Bundle(for: ParseTest.self).resourceURL!.appendingPathComponent("testData/" + groupName)
+        let dirUrl = Bundle(for: ParseTest.self).resourceURL!.appendingPathComponent("TestData/" + groupName)
         for obj in FileManager.default.enumerator(at: dirUrl, includingPropertiesForKeys: nil)! {
             let url = obj as! URL
             guard (url.lastPathComponent as NSString).deletingPathExtension == testName else { continue }

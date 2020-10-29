@@ -46,7 +46,7 @@ internal class MinifyingVisitor : MarcoVisitor {
     
     func visitObject(value: MarcoObject, data: ()) -> MarcoValueNode {
         var children = [MarcoNode](), keyMappings = [String: Int]()
-        var isIgnored = false, index = 0
+        var index = 0
 
         let valueNode = (value as! MarcoObjectNode)
         let oldChildren = valueNode.children
