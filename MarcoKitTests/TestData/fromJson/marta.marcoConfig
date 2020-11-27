@@ -112,7 +112,7 @@
     "core.go.up": ["Backspace"],
     "core.trash": ["F8", "Cmd+Backspace"],
     "core.select.all": ["Cmd+A"],
-    "core.deselect.all": ["Escape"],
+    "core.select.none": ["Escape"],
     "core.toggle.show.hidden.files": ["Control+H"],
     "core.preview": ["Cmd+Y", "Space"],
     "core.open.terminal.here": ["F11"],
@@ -204,7 +204,7 @@
         "separator",
 
         "core.select.all",
-        "core.deselect.all",
+        "core.select.none",
         "core.invert.selection",
         "separator",
 
@@ -473,7 +473,7 @@ keyBindings {
     core.copy.paths [ "Cmd+F12" ]
     core.copy.to.clipboard [ "Cmd+C" ]
     core.delete [ "Shift+F8" ]
-    core.deselect.all [ "Escape" ]
+    core.select.none [ "Escape" ]
     core.documentation [ "F1" ]
     core.duplicate [ "Cmd+D" ]
     core.edit [ "F4" ]
@@ -562,7 +562,7 @@ menu [
             "core.paste"
             "separator"
             "core.select.all"
-            "core.deselect.all"
+            "core.select.none"
             "core.invert.selection"
             "separator"
             "core.select.group"
