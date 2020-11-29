@@ -3,5 +3,3 @@
 
 --after
 14: '}' expected
-
-{a {b {c "d"}}💥

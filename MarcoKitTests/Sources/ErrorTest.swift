@@ -8,17 +8,21 @@ class ErrorTest : XCTestCaseWithTestData {
     }
 
     override func doTest(url: URL, testData: TestData) {
+        let documentText = testData.before
+
+        func render(error: MarcoParsingError) -> String {
+            let offset = documentText.distance(from: documentText.startIndex, to: error.index)
+            return String(offset) + ": " + error.message
+        }
+
         do {
-            _ = try tryParse(url: url, content: testData.before)
+            _ = try tryParse(url: url, content: documentText)
         } catch let e {
             if let e = e as? MarcoParsingError {
-                assertEquals(testData.after, e.localizedDescription, url)
+                assertEquals(testData.after, render(error: e), url)
             } else if let e = e as? MarcoNonStrictParsingError {
                 var text = e.document.text + "\n"
-                for error in (e.errors) {
-                    let offset = e.document.text.distance(from: e.document.text.startIndex, to: error.index)
-                    text += "\n" + String(offset) + ": " + error.message
-                }
+                e.errors.forEach { text += "\n" + render(error: $0) }
                 assertEquals(testData.after, text, url)
             } else {
                 assertEquals(testData.after, e.localizedDescription, url)

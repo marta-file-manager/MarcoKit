@@ -5,6 +5,3 @@
 
 --after
 11: Whitespace required in a key-value pair
-
-{
-    "bar"💥

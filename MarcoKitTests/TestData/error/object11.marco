@@ -5,6 +5,3 @@
 
 --after
 9: Whitespace required in a key-value pair
-
-{
-    foo💥

@@ -5,6 +5,3 @@
 
 --after
 12: Hexadecimal literal expected '\n'
-
-{
-    foo 0x💥
