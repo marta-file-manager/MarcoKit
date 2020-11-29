@@ -6,27 +6,15 @@ public class MarcoParsingError : Error {
     public let kind: ErrorKind
 
     /** Error offset. */
-    public let offset: Int
+    public let index: String.Index
 
     /** Error message. */
     public let message: String
 
-    /** Error context. */
-    public let context: String
-
-    public var localizedDescription: String {
-        var desc = String(offset) + ": " + message
-        if (!context.isEmpty) {
-            desc += "\n\n" + context
-        }
-        return desc
-    }
-
-    internal init(kind: ErrorKind, offset: Int, message: String, context: String) {
+    internal init(kind: ErrorKind, index: String.Index, message: String) {
         self.kind = kind
-        self.offset = offset
+        self.index = index
         self.message = message
-        self.context = context
     }
 
     public enum ErrorKind : Int {

@@ -8,13 +8,6 @@ internal class MarcoParserState {
 
     private(set) var recordedErrors = [MarcoParsingError]()
 
-    func getPos(index: String.Index) -> Int {
-        if text.endIndex == index {
-            return text.count
-        }
-        return text.distance(from: text.startIndex, to: index)
-    }
-    
     init(text: String, showContextInErrors: Bool) {
         self.text = text
         self.showContextInErrors = showContextInErrors
@@ -103,20 +96,7 @@ internal extension MarcoParserState {
         return error(message, index: index)
     }
     
-    func error(
-        _ message: String,
-        index: String.Index,
-        kind: MarcoParsingError.ErrorKind = .unknown
-    ) -> MarcoParsingError {
-        let pos = getPos(index: index)
-
-        let context: String
-        if showContextInErrors && pos > 0 {
-            context = text[..<index].suffix(100) + "💥"
-        } else {
-            context = ""
-        }
-        
-        return MarcoParsingError(kind: kind, offset: pos, message: message, context: context)
+    func error(_ message: String, index: String.Index, kind: MarcoParsingError.ErrorKind = .unknown) -> MarcoParsingError {
+        return MarcoParsingError(kind: kind, index: index, message: message)
     }
 }
