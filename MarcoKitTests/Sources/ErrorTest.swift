@@ -16,7 +16,8 @@ class ErrorTest : XCTestCaseWithTestData {
             } else if let e = e as? MarcoNonStrictParsingError {
                 var text = e.document.text + "\n"
                 for error in (e.errors) {
-                    text += "\n" + String(error.offset) + ": " + error.message
+                    let offset = e.document.text.distance(from: e.document.text.startIndex, to: error.index)
+                    text += "\n" + String(offset) + ": " + error.message
                 }
                 assertEquals(testData.after, text, url)
             } else {
