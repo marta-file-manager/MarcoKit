@@ -2,23 +2,15 @@ import Foundation
 
 /** Marco parsing error. */
 public class MarcoParsingError : Error {
-    /** Error kind. */
-    public let kind: ErrorKind
-
-    /** Error offset. */
-    public let index: String.Index
-
     /** Error message. */
     public let message: String
 
-    internal init(kind: ErrorKind, index: String.Index, message: String) {
-        self.kind = kind
-        self.index = index
-        self.message = message
-    }
+    /** Error offset. */
+    public let range: Range<String.Index>
 
-    public enum ErrorKind : Int {
-        case unknown
+    internal init(message: String, range: Range<String.Index>) {
+        self.message = message
+        self.range = range
     }
 }
 

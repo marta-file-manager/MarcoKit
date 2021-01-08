@@ -145,7 +145,7 @@ internal class MarcoParser {
                 let key = try parseKey()
 
                 if (!isIgnored && keyMappings[key.value] != nil) {
-                    try throwOrRecord(state.error("Duplicating key '\(key.value)'", index: indexBeforeKey))
+                    try throwOrRecord(state.error("Duplicating key '\(key.value)'", indexBefore: indexBeforeKey))
                 }
 
                 keyValuePairChildren.append(key)
@@ -165,10 +165,10 @@ internal class MarcoParser {
                 }
 
                 let indexBeforeValue = state.index
-                let value = try parseValue()
+                let value: MarcoValueNode = try parseValue()
 
                 if (!whitespacePresent) {
-                    try throwOrRecord(state.error("Whitespace required in a key-value pair", index: indexBeforeValue))
+                    try throwOrRecord(state.error("Whitespace required in a key-value pair", indexBefore: indexBeforeValue))
                 }
 
                 let valueIndex = keyValuePairChildren.count
@@ -188,16 +188,21 @@ internal class MarcoParser {
 
     private func parseCommaSeparatorIfPresent(_ children: inout [MarcoNode]) throws -> Bool {
         guard options.contains(.nonStrict) && state.currentOrNull() == "," else { return false }
-        state.record(error: state.error("Invalid character: Marco does not use ',' as a separator"))
+
+        let indexBefore = state.index
         children.append(WS(String(try state.advance())))
+        state.record(error: state.error("Invalid character: Marco does not use ',' as a separator", indexBefore: indexBefore))
         return true
     }
 
     private func parseColonOrEqualsIfPresent(_ children: inout [MarcoNode]) throws -> Bool {
         guard options.contains(.nonStrict) else { return false }
         guard let current = state.currentOrNull(), current == "=" || current == ":" else { return false }
-        state.record(error: state.error("Invalid character: Marco does not use '\(current)' as a separator"))
+
+        let indexBefore = state.index
         children.append(WS(String(try state.advance())))
+        state.record(error: state.error("Invalid character: Marco does not use '\(current)' as a separator", indexBefore: indexBefore))
+
         return true
     }
 
@@ -226,10 +231,9 @@ internal class MarcoParser {
     }
     
     private func parseIdentifier() throws -> MarcoIdentifierNode {
-        let startIndex = state.index
         let first = try state.advance()
         guard first.matches(MarcoParser.IDENTIFIER_START) else {
-            throw state.unexpectedCharacter(title: "Unexpected identifier character", index: startIndex)
+            throw state.unexpectedCharacter(title: "Unexpected identifier character")
         }
         
         var text = String(first)
@@ -267,6 +271,7 @@ internal class MarcoParser {
     
     private func parseBoolLiteral() throws -> MarcoBoolLiteralNode {
         let current = try state.current()
+        let indexBefore = state.index
         
         if (current == "t") {
             try state.match("true")
@@ -275,7 +280,7 @@ internal class MarcoParser {
             try state.match("false")
             return MarcoBoolLiteralNode(value: false)
         } else {
-            throw state.error("Boolean literal expected")
+            throw state.error("Boolean literal expected", indexBefore: indexBefore)
         }
     }
     
@@ -324,12 +329,12 @@ internal class MarcoParser {
         
         var isDouble = false
         while let current = state.currentOrNull(), current.matches(MarcoParser.DEC_NUMBER_SYMBOLS) {
-            let currentIndex = state.index
+            let indexBefore = state.index
             text.append(try state.advance())
 
             if (current == ".") {
                 if (isDouble) {
-                    try throwOrRecord(state.error("Duplicating '.' in a number literal", index: currentIndex))
+                    try throwOrRecord(state.error("Duplicating '.' in a number literal", range: indexBefore..<state.index))
                 } else {
                     isDouble = true
                 }
@@ -351,18 +356,23 @@ internal class MarcoParser {
                 text.append(current)
                 break
             } else if (current == "\\") {
+                let indexBeforeEscapable = state.index
                 let escaped = try state.advance()
                 if (!escaped.matches(MarcoParser.ESCAPABLE_SYMBOLS)) {
-                    try throwOrRecord(state.error(
-                        "Illegal escaped characters. Only \\n, \\t, \\r, \\\", \\\\ and \\uXXXX are supported."))
+                    let error = state.error(
+                        "Illegal escaped characters. Only \\n, \\t, \\r, \\\", \\\\ and \\uXXXX are supported.",
+                        indexBefore: indexBeforeEscapable
+                    )
+                    try throwOrRecord(error)
                 }
                 text.append(current)
                 text.append(escaped)
                 if (escaped == "u") {
                     for _ in 1...4 {
+                        let indexBeforeUnicode = state.index
                         let unicodeNumber = try state.advance()
                         if (!unicodeNumber.matches(MarcoParser.HEX_NUMBER_SYMBOLS)) {
-                            throw state.error("Invalid unicode character")
+                            throw state.error("Invalid unicode character", indexBefore: indexBeforeUnicode)
                         }
                         text.append(unicodeNumber)
                     }

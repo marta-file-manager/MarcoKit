@@ -41,7 +41,10 @@ internal class MarcoParserState {
     }
 
     private func checkIndex() throws {
-        guard !isEof else { throw error("Unexpected end of file") }
+        guard !isEof else {
+            let lineRange = text.lineRange(for: lastCharacterRange())
+            throw error("Unexpected end of file", range: lineRange)
+        }
     }
 }
 
@@ -51,34 +54,46 @@ internal extension MarcoParserState {
     }
 
     func match(_ char: Character) throws {
-        let index = self.index
+        let indexBefore = self.index
         if ((try advance()) != char) {
-            throw unexpectedCharacter(expected: char, index: index)
+            throw unexpectedCharacter(expected: char, range: indexBefore..<self.index)
         }
     }
 
     func match(_ word: String) throws {
+        let indexBefore = self.index
+
         do {
             for char in word {
                 try match(char)
             }
         } catch _ {
-            throw self.error("'\(word)' expected")
+            throw self.error("'\(word)' expected", range: indexBefore..<self.index)
+        }
+    }
+
+    private func lastCharacterRange() -> Range<String.Index> {
+        guard !text.isEmpty else { return text.startIndex..<text.endIndex }
+
+        if index == text.endIndex {
+            return text.index(before: index)..<index
+        } else {
+            return index..<text.index(after: index)
         }
     }
     
     func unexpectedCharacter(
         title: String = "Unexpected character",
         expected: Character? = nil,
-        index: String.Index? = nil
-        ) -> MarcoParsingError {
+        range: Range<String.Index>? = nil
+    ) -> MarcoParsingError {
         let actual: String
         if let char = currentOrNull() {
             switch (char) {
-            case "\n": actual = "\\n"
-            case "\r": actual = "\\r"
-            case "\t": actual = "\\t"
-            default: actual = String(char)
+                case "\n": actual = "\\n"
+                case "\r": actual = "\\r"
+                case "\t": actual = "\\t"
+                default: actual = String(char)
             }
         } else {
             actual = "<eof>"
@@ -89,14 +104,18 @@ internal extension MarcoParserState {
             message.append(", expected '\(char)'")
         }
         
-        return error(message, index: index ?? self.index)
+        return error(message, range: range ?? lastCharacterRange())
     }
-    
+
     func error(_ message: String) -> MarcoParsingError {
-        return error(message, index: index)
+        return MarcoParsingError(message: message, range: lastCharacterRange())
+    }
+
+    func error(_ message: String, indexBefore: String.Index) -> MarcoParsingError {
+        return MarcoParsingError(message: message, range: indexBefore..<self.index)
     }
     
-    func error(_ message: String, index: String.Index, kind: MarcoParsingError.ErrorKind = .unknown) -> MarcoParsingError {
-        return MarcoParsingError(kind: kind, index: index, message: message)
+    func error(_ message: String, range: Range<String.Index>) -> MarcoParsingError {
+        return MarcoParsingError(message: message, range: range)
     }
 }
