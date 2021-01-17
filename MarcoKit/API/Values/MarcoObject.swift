@@ -111,7 +111,7 @@ public protocol MarcoIdentifier {
     var offset: Int { get }
     
     /** Element range. */
-    var range: ClosedRange<Int> { get }
+    var range: Range<Int> { get }
 }
 
 public struct MarcoObjectSequence : Sequence, IteratorProtocol {

@@ -6,7 +6,7 @@ public protocol MarcoValue : class, CustomStringConvertible {
     var offset: Int { get }
 
     /** Element range. */
-    var range: ClosedRange<Int> { get }
+    var range: Range<Int> { get }
 
     /** Value text. */
     var text: String { get }

@@ -12,8 +12,8 @@ internal protocol MarcoNode : class {
 internal protocol MarcoValueNode: MarcoNode, MarcoValue {}
 
 internal extension MarcoNode {
-    var range: ClosedRange<Int> {
-        return offset...(offset + text.count)
+    var range: Range<Int> {
+        return offset..<(offset + text.count)
     }
 }
 
