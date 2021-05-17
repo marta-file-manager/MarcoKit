@@ -1,6 +1,6 @@
 import Foundation
 
-internal protocol MarcoNode : class {
+internal protocol MarcoNode : AnyObject {
     var offset: Int { get set }
     
     var parent: MarcoNode? { get set }

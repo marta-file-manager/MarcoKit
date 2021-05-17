@@ -1,7 +1,7 @@
 import Foundation
 
 /** Marco value. */
-public protocol MarcoValue : class, CustomStringConvertible {
+public protocol MarcoValue : AnyObject, CustomStringConvertible {
     /** Element offset in a parent. Call `MarcoDocument`.`updateOffsets()` to initialize this property. */
     var offset: Int { get }
 
