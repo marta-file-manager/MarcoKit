@@ -5,4 +5,4 @@
 }
 
 --after
-8: Unexpected value character '='
+8-9: Unexpected value character '='

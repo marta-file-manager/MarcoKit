@@ -4,4 +4,4 @@
 }
 
 --after
-12: Hexadecimal literal expected '\n'
+12-13: Hexadecimal literal expected '\n'

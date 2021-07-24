@@ -4,4 +4,4 @@
 }
 
 --after
-11: Whitespace required in a key-value pair
+11-14: Whitespace required in a key-value pair

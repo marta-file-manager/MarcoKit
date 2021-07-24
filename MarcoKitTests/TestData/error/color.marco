@@ -2,4 +2,4 @@
 #ffffgg
 
 --after
-5: Color literal expected, got 'g'
+5-6: Color literal expected, got 'g'

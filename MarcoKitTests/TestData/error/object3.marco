@@ -2,4 +2,4 @@
 {a "b" c
 
 --after
-8: Unexpected end of file
+0-8: Unexpected end of file

@@ -2,4 +2,4 @@
 [truefalse]
 
 --after
-5: Whitespace required between array entries
+5-6: Whitespace required between array entries

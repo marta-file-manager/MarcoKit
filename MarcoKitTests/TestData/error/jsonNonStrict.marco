@@ -4,14 +4,14 @@
 --after
 {"hello": "world", "array": [1, 2, 3, true, false, "a", {}, [], [1]]}
 
-8: Invalid character: Marco does not use ':' as a separator
-17: Invalid character: Marco does not use ',' as a separator
-26: Invalid character: Marco does not use ':' as a separator
-30: Invalid character: Marco does not use ',' as a separator
-33: Invalid character: Marco does not use ',' as a separator
-36: Invalid character: Marco does not use ',' as a separator
-42: Invalid character: Marco does not use ',' as a separator
-49: Invalid character: Marco does not use ',' as a separator
-54: Invalid character: Marco does not use ',' as a separator
-58: Invalid character: Marco does not use ',' as a separator
-62: Invalid character: Marco does not use ',' as a separator
+8-9: Invalid character: Marco does not use ':' as a separator
+17-18: Invalid character: Marco does not use ',' as a separator
+26-27: Invalid character: Marco does not use ':' as a separator
+30-31: Invalid character: Marco does not use ',' as a separator
+33-34: Invalid character: Marco does not use ',' as a separator
+36-37: Invalid character: Marco does not use ',' as a separator
+42-43: Invalid character: Marco does not use ',' as a separator
+49-50: Invalid character: Marco does not use ',' as a separator
+54-55: Invalid character: Marco does not use ',' as a separator
+58-59: Invalid character: Marco does not use ',' as a separator
+62-63: Invalid character: Marco does not use ',' as a separator

@@ -2,4 +2,4 @@
 foo
 
 --after
-2: 'false' expected
+0-2: 'false' expected

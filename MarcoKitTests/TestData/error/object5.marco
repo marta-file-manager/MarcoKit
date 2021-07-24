@@ -2,4 +2,4 @@
 {a {b {c "d"}}
 
 --after
-14: '}' expected
+13-14: '}' expected

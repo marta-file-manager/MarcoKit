@@ -2,4 +2,4 @@
 [t
 
 --after
-2: 'true' expected
+1-2: 'true' expected

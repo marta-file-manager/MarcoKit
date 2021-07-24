@@ -4,4 +4,4 @@ foo {
 }}
 
 --after
-15: Whitespace required between object entries
+15-16: Whitespace required between object entries

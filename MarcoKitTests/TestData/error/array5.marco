@@ -2,4 +2,4 @@
 [[[[[[[[]]]]]]]]]
 
 --after
-16: End of file expected, got ']'
+16-17: End of file expected, got ']'

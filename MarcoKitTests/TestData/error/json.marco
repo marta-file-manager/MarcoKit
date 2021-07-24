@@ -2,4 +2,4 @@
 {"hello": "world", "array": [1, 2, 3, true, false, "a", {}, [], [1]]}
 
 --after
-8: Unexpected value character ':'
+8-9: Unexpected value character ':'

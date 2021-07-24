@@ -2,4 +2,4 @@
 [][]
 
 --after
-2: End of file expected, got '['
+2-3: End of file expected, got '['

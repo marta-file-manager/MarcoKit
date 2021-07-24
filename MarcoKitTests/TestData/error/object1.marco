@@ -2,4 +2,4 @@
 {
 
 --after
-1: '}' expected
+0-1: '}' expected

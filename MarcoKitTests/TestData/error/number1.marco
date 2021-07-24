@@ -2,4 +2,4 @@
 1.0f
 
 --after
-3: End of file expected, got 'f'
+3-4: End of file expected, got 'f'

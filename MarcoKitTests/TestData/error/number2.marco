@@ -2,4 +2,4 @@
 1.0.2
 
 --after
-3: Duplicating '.' in a number literal
+3-4: Duplicating '.' in a number literal

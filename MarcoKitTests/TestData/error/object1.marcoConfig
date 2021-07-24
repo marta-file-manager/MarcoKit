@@ -2,4 +2,4 @@
 foo
 
 --after
-3: Unexpected end of file
+0-3: Unexpected end of file

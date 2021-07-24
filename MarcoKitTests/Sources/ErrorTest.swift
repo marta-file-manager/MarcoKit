@@ -11,8 +11,9 @@ class ErrorTest : XCTestCaseWithTestData {
         let documentText = testData.before
 
         func render(error: MarcoParsingError) -> String {
-            let offset = documentText.distance(from: documentText.startIndex, to: error.index)
-            return String(offset) + ": " + error.message
+            let startOffset = documentText.distance(from: documentText.startIndex, to: error.range.lowerBound)
+            let endOffset = documentText.distance(from: documentText.startIndex, to: error.range.upperBound)
+            return "\(startOffset)-\(endOffset): \(error.message)"
         }
 
         do {
