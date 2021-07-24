@@ -14,6 +14,7 @@ public protocol MarcoValue : AnyObject, CustomStringConvertible {
     /** Pass this element to the given `visitor`. */
     func accept<V, D, R>(_ visitor: V, data: D) -> R where V : MarcoVisitor, V.ReturnType == R, V.Data == D
 
+    /** Compares Marco nodes. Returns `true` if the content of both nodes is recursively equivalent. */
     func equals(other: MarcoValue) -> Bool
 }
 
