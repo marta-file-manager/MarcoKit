@@ -13,6 +13,8 @@ public protocol MarcoValue : AnyObject, CustomStringConvertible {
 
     /** Pass this element to the given `visitor`. */
     func accept<V, D, R>(_ visitor: V, data: D) -> R where V : MarcoVisitor, V.ReturnType == R, V.Data == D
+
+    func equals(other: MarcoValue) -> Bool
 }
 
 public extension MarcoValue {

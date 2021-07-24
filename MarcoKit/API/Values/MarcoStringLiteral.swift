@@ -9,4 +9,8 @@ public extension MarcoStringLiteral {
     func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {
         return visitor.visitString(value: self, data: data)
     }
+
+    func equals(other: MarcoValue) -> Bool {
+        return value == (other as? MarcoStringLiteral)?.value
+    }
 }

@@ -19,4 +19,9 @@ public extension MarcoDocument {
     var description: String {
         return value.description
     }
+
+    func equals(other: MarcoValue) -> Bool {
+        guard let other = other as? MarcoDocument else { return false }
+        return self.value.equals(other: other.value)
+    }
 }

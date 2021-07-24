@@ -123,6 +123,11 @@ public extension MarcoArray {
     func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {
         return visitor.visitArray(value: self, data: data)
     }
+
+    func equals(other: MarcoValue) -> Bool {
+        guard let other = other as? MarcoArray, self.count == other.count else { return false }
+        return (0..<self.count).allSatisfy { index in self[index].equals(other: other[index]) }
+    }
 }
 
 public struct MarcoArraySequence : Sequence, IteratorProtocol {

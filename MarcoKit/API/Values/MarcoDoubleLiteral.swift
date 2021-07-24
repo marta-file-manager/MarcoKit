@@ -11,4 +11,8 @@ public extension MarcoDoubleLiteral {
     func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {
         return visitor.visitDouble(value: self, data: data)
     }
+
+    func equals(other: MarcoValue) -> Bool {
+        return self.doubleValue == (other as? MarcoDoubleLiteral)?.doubleValue
+    }
 }

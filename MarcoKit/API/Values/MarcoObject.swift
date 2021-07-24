@@ -100,6 +100,16 @@ public extension MarcoObject {
     func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {
         return visitor.visitObject(value: self, data: data)
     }
+
+    func equals(other: MarcoValue) -> Bool {
+        guard let other = other as? MarcoObject else { return false }
+        let selfKeys = self.keys, otherKeys = other.keys
+
+        return selfKeys == otherKeys && selfKeys.allSatisfy { key in
+            guard let selfItem = self[key], let otherItem = other[key] else { return false }
+            return selfItem.equals(other: otherItem)
+        }
+    }
 }
 
 /** Marco object key identifier. */
