@@ -38,17 +38,10 @@ internal class MarcoHexLiteralNode : MarcoValueNode, MarcoIntLiteral {
     
     private static func calculateValue(text: String) -> Int {
         let scanner = Scanner(string: text)
-        scanner.scanLocation = 2
-        
-        if (is64BitPlatform) {
-            var hexInt: UInt64 = 0
-            scanner.scanHexInt64(&hexInt)
-            return Int(hexInt)
-        } else {
-            var hexInt: UInt32 = 0
-            scanner.scanHexInt32(&hexInt)
-            return Int(hexInt)
-        }
+        scanner.currentIndex = text.index(text.startIndex, offsetBy: 2)
+
+        let value = scanner.scanInt64(representation: .hexadecimal) ?? 0
+        return Int(value)
     }
     
     func clone() -> MarcoNode {

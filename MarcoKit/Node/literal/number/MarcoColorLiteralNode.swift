@@ -43,17 +43,10 @@ internal class MarcoColorLiteralNode : MarcoValueNode, MarcoIntLiteral {
 
         let useAlpha = text.count == 9
         let scanner = Scanner(string: text)
-        scanner.scanLocation = 1
+        scanner.currentIndex = text.index(after: text.startIndex)
         
-        if (is64BitPlatform) {
-            var hexInt: UInt64 = 0
-            scanner.scanHexInt64(&hexInt)
-            return (Int(hexInt), useAlpha)
-        } else {
-            var hexInt: UInt32 = 0
-            scanner.scanHexInt32(&hexInt)
-            return (Int(hexInt), useAlpha)
-        }
+        let value = scanner.scanUInt64(representation: .hexadecimal) ?? 0
+        return (Int(value), useAlpha)
     }
     
     func clone() -> MarcoNode {

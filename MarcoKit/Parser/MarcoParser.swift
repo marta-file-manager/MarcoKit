@@ -1,7 +1,5 @@
 import Foundation
 
-internal let is64BitPlatform = Int64(Int.max) == Int64.max
-
 internal class MarcoParser {
     private static let HEX_NUMBER_SYMBOLS = CharacterSet(charactersIn: "0123456789abcdefABCDEF")
     private static let DEC_NUMBER_SYMBOLS = CharacterSet(charactersIn: "0123456789.eE+-")
