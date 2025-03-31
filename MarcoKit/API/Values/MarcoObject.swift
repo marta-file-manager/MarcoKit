@@ -1,7 +1,7 @@
 import Foundation
 
 /** Marco object value. */
-public protocol MarcoObject : MarcoValue {
+public protocol MarcoObject: MarcoValue {
     /** Element count. */
     var count: Int { get }
 
@@ -124,7 +124,7 @@ public protocol MarcoIdentifier {
     var range: Range<Int> { get }
 }
 
-public struct MarcoObjectSequence : Sequence, IteratorProtocol {
+public struct MarcoObjectSequence: Sequence, IteratorProtocol {
     private let object: MarcoObject
     private let keys: [String]
     private var index = 0

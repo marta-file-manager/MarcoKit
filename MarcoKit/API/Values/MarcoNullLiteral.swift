@@ -1,7 +1,7 @@
 import Foundation
 
 /** Marco null value. */
-public protocol MarcoNullLiteral : MarcoValue {}
+public protocol MarcoNullLiteral: MarcoValue {}
 
 public extension MarcoNullLiteral {
     func accept<V, D, R>(_ visitor: V, data: D) -> R where V: MarcoVisitor, V.ReturnType == R, V.Data == D {

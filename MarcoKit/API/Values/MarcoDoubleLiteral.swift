@@ -1,7 +1,7 @@
 import Foundation
 
 /** Marco double value. */
-public protocol MarcoDoubleLiteral : MarcoNumberLiteral {}
+public protocol MarcoDoubleLiteral: MarcoNumberLiteral {}
 
 public extension MarcoDoubleLiteral {
     var intValue: Int {

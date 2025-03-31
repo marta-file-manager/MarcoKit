@@ -1,7 +1,7 @@
 import Foundation
 
 /** Marco array value. */
-public protocol MarcoArray : MarcoValue {
+public protocol MarcoArray: MarcoValue {
     /** Element count. */
     var count: Int { get }
 
@@ -130,7 +130,7 @@ public extension MarcoArray {
     }
 }
 
-public struct MarcoArraySequence : Sequence, IteratorProtocol {
+public struct MarcoArraySequence: Sequence, IteratorProtocol {
     private let array: MarcoArray
     private let count: Int
     private var index = 0

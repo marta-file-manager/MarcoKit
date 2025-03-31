@@ -5,7 +5,7 @@ public class Marco {
     private init() {}
 
     /** Parsing options. */
-    public struct Options : OptionSet {
+    public struct Options: OptionSet, Sendable {
         public let rawValue: UInt
 
         public init(rawValue: UInt) {
@@ -15,15 +15,14 @@ public class Marco {
         /** Parse a configuration file. */
         public static let config = Options(rawValue: 1)
 
-        /** Throw `MarcoNonStrictParsingError` in case of non-critical parsing erorrs. */
         public static let nonStrict = Options(rawValue: 2)
 
         public static let showContextInErrors = Options(rawValue: 4)
     }
 
     /** Returns a parsed document. */
-    public static func parse(_ text: String, options: Options = []) throws -> MarcoDocument {
-        return try MarcoParser.parse(text: text, options: options)
+    public static func parse(_ text: String, options: Options = []) -> (document: MarcoDocument?, errors: [MarcoParsingError]) {
+        return MarcoParser.parse(text: text, options: options)
     }
 
     /** Wraps a `value` with a `MarcoDocument` value. */

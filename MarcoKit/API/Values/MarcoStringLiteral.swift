@@ -1,7 +1,7 @@
 import Foundation
 
 /** Marco string value. */
-public protocol MarcoStringLiteral : MarcoValue {
+public protocol MarcoStringLiteral: MarcoValue {
     var value: String { get }
 }
 

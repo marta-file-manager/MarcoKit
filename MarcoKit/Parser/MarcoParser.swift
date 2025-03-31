@@ -1,5 +1,7 @@
 import Foundation
 
+internal typealias MarcoParsingResult<Document : MarcoDocument> = (Document, [MarcoParsingError])
+
 internal class MarcoParser {
     private static let HEX_NUMBER_SYMBOLS = CharacterSet(charactersIn: "0123456789abcdefABCDEF")
     private static let DEC_NUMBER_SYMBOLS = CharacterSet(charactersIn: "0123456789.eE+-")
@@ -13,8 +15,8 @@ internal class MarcoParser {
 
     private var isParsed: Bool = false
 
-    static func parse(text: String, options: Marco.Options = []) throws -> MarcoDocument {
-        return try MarcoParser(text: text, options: options).parse()
+    static func parse(text: String, options: Marco.Options = []) -> (MarcoDocument?, [MarcoParsingError]) {
+        return MarcoParser(text: text, options: options).parse()
     }
     
     private init(text: String, options: Marco.Options) {
@@ -22,34 +24,33 @@ internal class MarcoParser {
         self.options = options
     }
 
-    private func parse() throws -> MarcoDocumentNode {
+    private func parse() -> (MarcoDocument?, [MarcoParsingError]) {
         precondition(!isParsed)
         isParsed = true
 
-        let document: MarcoDocumentNode
+        do throws(MarcoParsingError) {
+            let document: MarcoDocumentNode
 
-        if (options.contains(.config)) {
-            let object = try parseObject(withBrackets: false)
-            document = MarcoDocumentNode(children: [object], valueIndex: 0)
-        } else {
-            var children = [MarcoNode]()
-            children.appendIfNotNull(try parseWhitespace())
+            if (options.contains(.config)) {
+                let object = try parseObject(withBrackets: false)
+                document = MarcoDocumentNode(children: [object], valueIndex: 0)
+            } else {
+                var children = [MarcoNode]()
+                children.appendIfNotNull(try parseWhitespace())
 
-            let valueIndex = children.isEmpty ? 0 : 1
+                let valueIndex = children.isEmpty ? 0 : 1
 
-            children.append(try parseValue())
-            children.appendIfNotNull(try parseWhitespace())
+                children.append(try parseValue())
+                children.appendIfNotNull(try parseWhitespace())
 
-            document = MarcoDocumentNode(children: children, valueIndex: valueIndex)
+                document = MarcoDocumentNode(children: children, valueIndex: valueIndex)
+            }
+
+            guard state.isEof else { throw state.unexpectedCharacter(title: "End of file expected, got") }
+            return (document, state.recordedErrors)
+        } catch {
+            return (nil, [error])
         }
-
-        guard state.isEof else { throw state.unexpectedCharacter(title: "End of file expected, got") }
-
-        if (!state.recordedErrors.isEmpty) {
-            throw MarcoNonStrictParsingError(errors: state.recordedErrors, document: document)
-        }
-
-        return document
     }
 
     static func isSimpleKey(key: String) -> Bool {
@@ -58,7 +59,7 @@ internal class MarcoParser {
             && key.dropFirst().allSatisfy { $0.matches(IDENTIFIER_MAIN) }
     }
     
-    private func parseValue() throws -> MarcoValueNode {
+    private func parseValue() throws(MarcoParsingError) -> MarcoValueNode {
         let current = try state.current()
         
         switch (current) {
@@ -72,7 +73,7 @@ internal class MarcoParser {
         }
     }
     
-    private func parseArray() throws -> MarcoArrayNode {
+    private func parseArray() throws(MarcoParsingError) -> MarcoArrayNode {
         try state.match(MarcoStructuralElementNode.Kind.leftSquareBracket.rawValue)
         
         var children: [MarcoNode] = [MarcoStructuralElementNode(.leftSquareBracket)]
@@ -103,7 +104,7 @@ internal class MarcoParser {
         return MarcoArrayNode(children: children, elementIndices: elementIndices)
     }
 
-    private func parseObject(withBrackets: Bool = true) throws -> MarcoObjectNode {
+    private func parseObject(withBrackets: Bool = true) throws(MarcoParsingError) -> MarcoObjectNode {
         var children = [MarcoNode]()
         
         if (withBrackets) {
@@ -184,7 +185,7 @@ internal class MarcoParser {
         return MarcoObjectNode(children: children, keyMappings: keyMappings, isConfig: !withBrackets)
     }
 
-    private func parseCommaSeparatorIfPresent(_ children: inout [MarcoNode]) throws -> Bool {
+    private func parseCommaSeparatorIfPresent(_ children: inout [MarcoNode]) throws(MarcoParsingError) -> Bool {
         guard options.contains(.nonStrict) && state.currentOrNull() == "," else { return false }
 
         let indexBefore = state.index
@@ -193,7 +194,7 @@ internal class MarcoParser {
         return true
     }
 
-    private func parseColonOrEqualsIfPresent(_ children: inout [MarcoNode]) throws -> Bool {
+    private func parseColonOrEqualsIfPresent(_ children: inout [MarcoNode]) throws(MarcoParsingError) -> Bool {
         guard options.contains(.nonStrict) else { return false }
         guard let current = state.currentOrNull(), current == "=" || current == ":" else { return false }
 
@@ -207,7 +208,7 @@ internal class MarcoParser {
     private func parseStructuralIfPresent(
         _ char: MarcoStructuralElementNode.Kind,
         _ children: inout [MarcoNode]
-    ) throws -> Bool {
+    ) throws(MarcoParsingError) -> Bool {
         let current = try state.current()
         if (current == char.rawValue) {
             try state.skip()
@@ -218,7 +219,7 @@ internal class MarcoParser {
         return true
     }
 
-    private func parseKey() throws -> MarcoIdentifierLikeNode {
+    private func parseKey() throws(MarcoParsingError) -> MarcoIdentifierLikeNode {
         let current = try state.current()
 
         if (current == "\"") {
@@ -228,7 +229,7 @@ internal class MarcoParser {
         }
     }
     
-    private func parseIdentifier() throws -> MarcoIdentifierNode {
+    private func parseIdentifier() throws(MarcoParsingError) -> MarcoIdentifierNode {
         let first = try state.advance()
         guard first.matches(MarcoParser.IDENTIFIER_START) else {
             throw state.unexpectedCharacter(title: "Unexpected identifier character")
@@ -243,7 +244,7 @@ internal class MarcoParser {
         return MarcoIdentifierNode(name: text)
     }
 
-    private func parseWhitespace() throws -> MarcoWhitespaceNode? {
+    private func parseWhitespace() throws(MarcoParsingError) -> MarcoWhitespaceNode? {
         var text = ""
         var containsNewLine = false
         
@@ -262,12 +263,12 @@ internal class MarcoParser {
         return MarcoWhitespaceNode(text: text, containsNewLine: containsNewLine)
     }
 
-    private func parseNullLiteral() throws -> MarcoNullLiteralNode {
+    private func parseNullLiteral() throws(MarcoParsingError) -> MarcoNullLiteralNode {
         try state.match("null")
         return MarcoNullLiteralNode()
     }
     
-    private func parseBoolLiteral() throws -> MarcoBoolLiteralNode {
+    private func parseBoolLiteral() throws(MarcoParsingError) -> MarcoBoolLiteralNode {
         let current = try state.current()
         let indexBefore = state.index
         
@@ -282,7 +283,7 @@ internal class MarcoParser {
         }
     }
     
-    private func parseNumberLiteral() throws -> MarcoValueNode {
+    private func parseNumberLiteral() throws(MarcoParsingError) -> MarcoValueNode {
         var text: String = ""
 
         let probSign = try state.current()
@@ -293,7 +294,7 @@ internal class MarcoParser {
         let firstChar = try state.advance()
         text.append(firstChar)
         
-        func parseHex(maxLength: Int = Int.max) throws -> Int {
+        func parseHex(maxLength: Int = Int.max) throws(MarcoParsingError) -> Int {
             var parsedCount = 0
             while let current = state.currentOrNull(),
                 current.matches(MarcoParser.HEX_NUMBER_SYMBOLS) && text.count <= maxLength
@@ -342,7 +343,7 @@ internal class MarcoParser {
         return isDouble ? MarcoDoubleLiteralNode(text: text) : MarcoIntLiteralNode(text: text)
     }
     
-    private func parseStringLiteral() throws -> MarcoStringLiteralNode {
+    private func parseStringLiteral() throws(MarcoParsingError) -> MarcoStringLiteralNode {
         try state.match("\"")
         
         var text = "\""
@@ -383,7 +384,7 @@ internal class MarcoParser {
         return MarcoStringLiteralNode(text: text)
     }
 
-    private func throwOrRecord(_ error: MarcoParsingError) throws {
+    private func throwOrRecord(_ error: MarcoParsingError) throws(MarcoParsingError) {
         if (options.contains(.nonStrict)) {
             state.record(error: error)
         } else {

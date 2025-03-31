@@ -19,14 +19,14 @@ internal class MarcoParserState {
         return index == text.endIndex
     }
 
-    func advance() throws -> Character {
+    func advance() throws(MarcoParsingError) -> Character {
         try checkIndex()
         let ch = text[index]
         index = text.index(after: index)
         return ch
     }
     
-    func current() throws -> Character {
+    func current() throws(MarcoParsingError) -> Character {
         try checkIndex()
         return text[index]
     }
@@ -40,7 +40,7 @@ internal class MarcoParserState {
         recordedErrors.append(error)
     }
 
-    private func checkIndex() throws {
+    private func checkIndex() throws(MarcoParsingError) {
         guard !isEof else {
             let lineRange = text.lineRange(for: lastCharacterRange())
             throw error("Unexpected end of file", range: lineRange)
@@ -49,18 +49,18 @@ internal class MarcoParserState {
 }
 
 internal extension MarcoParserState {
-    func skip() throws {
+    func skip() throws(MarcoParsingError) {
         _ = try advance()
     }
 
-    func match(_ char: Character) throws {
+    func match(_ char: Character) throws(MarcoParsingError) {
         let indexBefore = self.index
         if ((try advance()) != char) {
             throw unexpectedCharacter(expected: char, range: indexBefore..<self.index)
         }
     }
 
-    func match(_ word: String) throws {
+    func match(_ word: String) throws(MarcoParsingError) {
         let indexBefore = self.index
 
         do {

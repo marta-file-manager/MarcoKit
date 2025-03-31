@@ -1,7 +1,7 @@
 import Foundation
 
 /** Marco boolean value. */
-public protocol MarcoBoolLiteral : MarcoValue {
+public protocol MarcoBoolLiteral: MarcoValue {
     /** `Bool` value. */
     var value: Bool { get }
 }

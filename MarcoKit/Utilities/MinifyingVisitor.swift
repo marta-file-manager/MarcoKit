@@ -1,6 +1,6 @@
 import Foundation
 
-internal class MinifyingVisitor : MarcoVisitor {
+internal struct MinifyingVisitor : MarcoVisitor, Sendable {
     public static let instance = MinifyingVisitor()
     private init() {}
 

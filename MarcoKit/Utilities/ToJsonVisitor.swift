@@ -1,6 +1,6 @@
 import Foundation
 
-internal class ToJsonVisitor : MarcoVisitor {
+internal struct ToJsonVisitor : MarcoVisitor, Sendable {
     static let instance = ToJsonVisitor()
     private init() {}
 

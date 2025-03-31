@@ -1,7 +1,7 @@
 import Foundation
 
 /** Marco number value. */
-public protocol MarcoNumberLiteral : MarcoValue {
+public protocol MarcoNumberLiteral: MarcoValue {
     /** Int value. Check if this value is `MarcoIntLiteral` to avoid conversion. */
     var intValue: Int { get }
 

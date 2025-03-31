@@ -1,6 +1,6 @@
 import Foundation
 
-internal class JsonToMarcoConverter {
+internal struct JsonToMarcoConverter {
     static let instance = JsonToMarcoConverter()
     private init() {}
 
